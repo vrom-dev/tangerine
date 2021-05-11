@@ -1,7 +1,10 @@
 package com.tangerine.restapi.controller;
 
 import com.tangerine.restapi.exceptions.ProjectNotFoundException;
+import com.tangerine.restapi.model.Cliente;
 import com.tangerine.restapi.model.Proyecto;
+import com.tangerine.restapi.repository.ClienteRepository;
+import com.tangerine.restapi.service.ClienteService;
 import com.tangerine.restapi.service.ProyectoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,9 @@ import java.util.List;
 public class ApiController {
     @Autowired
     ProyectoService proyectoService;
+
+    @Autowired
+    ClienteService clienteService;
 
     @GetMapping("/proyecto")
     public List<Proyecto> getAllProyectos() {
@@ -31,4 +37,8 @@ public class ApiController {
         return proyectoService.saveProyecto(proyecto);
     }
 
+    @GetMapping("/cliente")
+    public List<Cliente> getAllCliente() {
+        return clienteService.findAll();
+    }
 }
