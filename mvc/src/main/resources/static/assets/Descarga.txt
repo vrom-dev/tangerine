@@ -1,0 +1,5 @@
+https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself
+
+https://getbootstrap.com/docs/5.0/getting-started/download/
+https://getbootstrap.com/docs/4.6/getting-started/introduction/
+https://getbootstrap.com/docs/4.6/getting-started/download/
