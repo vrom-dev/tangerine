@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+</head>
+<body>
+
+<p>Formulario</p>
+
+<form th:object="${proyecto}"
+      th:action="@{/proyectos/add}"
+      method="post">
+  <div>
+    <label for="proyecto">Proyecto</label>
+    <input type="text" id="proyecto" th:field="*{proyecto}">
+  </div>
+  <div>
+    <label for="fecha">Fecha fin</label>
+    <input type="text" id="fecha" th:field="*{fechafin}">
+  </div>
+  <div>
+    <label for="resumen">Resumen</label>
+    <input type="text" id="resumen" th:field="*{resumen}">
+  </div>
+  <div>
+    <label for="descripcion">Descripción</label>
+    <input type="text" id="descripcion" th:field="*{descripcion}">
+  </div>
+  <div>
+    <label for="imagen">Imagen</label>
+    <input type="text" id="imagen" th:field="*{imagen}">
+  </div>
+  <div>
+    <select
+            name="idcliente"
+            th:field="*{cliente.id}"
+    >
+      <option
+              th:each="cliente: ${clientes}"
+              th:value="${cliente.id}"
+              th:text="${cliente.nombre}"
+      ></option>
+    </select>
+  </div>
+
+  <div>
+    <input type="submit" value="Enviar">
+
+  </div>
+</form>
+
+</body>
+</html>
+

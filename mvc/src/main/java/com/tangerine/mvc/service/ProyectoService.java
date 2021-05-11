@@ -15,4 +15,10 @@ public class ProyectoService {
         Proyecto[] proyectosArray = restTemplate.getForObject("http://localhost:5000/api/proyecto", Proyecto[].class);
         return Arrays.asList(proyectosArray);
     }
+
+    public Proyecto addProyecto(Proyecto proyectoToAdd) {
+        RestTemplate restTemplate = new RestTemplate();
+        Proyecto proyecto = restTemplate.postForObject("http://localhost:5000/api/proyecto", proyectoToAdd, Proyecto.class);
+        return proyecto;
+    }
 }
