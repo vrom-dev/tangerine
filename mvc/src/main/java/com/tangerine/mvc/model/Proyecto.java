@@ -1,34 +1,39 @@
 package com.tangerine.mvc.model;
 
-public class Proyecto {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    private Integer idproyecto;
+public class Proyecto {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
     private String proyecto;
     private String fechafin;
     private String resumen;
     private String descripcion;
     private String imagen;
-    private Cliente idcliente;
+    private Cliente cliente;
 
     public Proyecto() {
     }
 
-    public Proyecto(Integer idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente idcliente) {
-        this.idproyecto = idproyecto;
+    public Proyecto(Integer id, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente cliente) {
+        this.id = id;
         this.proyecto = proyecto;
         this.fechafin = fechafin;
         this.resumen = resumen;
         this.descripcion = descripcion;
         this.imagen = imagen;
-        this.idcliente = idcliente;
+        this.cliente = cliente;
     }
 
-    public Integer getIdproyecto() {
-        return idproyecto;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdproyecto(Integer idproyecto) {
-        this.idproyecto = idproyecto;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getProyecto() {
@@ -71,24 +76,24 @@ public class Proyecto {
         this.imagen = imagen;
     }
 
-    public Cliente getIdcliente() {
-        return idcliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setIdcliente(Cliente idcliente) {
-        this.idcliente = idcliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     @Override
     public String toString() {
         return "Proyecto{" +
-                "idproyecto=" + idproyecto +
+                "id=" + id +
                 ", proyecto='" + proyecto + '\'' +
                 ", fechafin='" + fechafin + '\'' +
                 ", resumen='" + resumen + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
-                ", idcliente=" + idcliente +
+                ", cliente=" + cliente +
                 '}';
     }
 }

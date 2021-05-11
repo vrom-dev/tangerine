@@ -1,8 +1,13 @@
 package com.tangerine.mvc.model;
 
-public class Cliente {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    private Integer idcliente;
+public class Cliente {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
     private String nombre;
     private String descripcion;
     private String logo;
@@ -11,18 +16,18 @@ public class Cliente {
     }
 
     public Cliente(Integer idcliente, String nombre, String descripcion, String logo) {
-        this.idcliente = idcliente;
+        this.id = idcliente;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.logo = logo;
     }
 
-    public Integer getIdcliente() {
-        return idcliente;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdcliente(Integer idcliente) {
-        this.idcliente = idcliente;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -52,7 +57,7 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "idcliente=" + idcliente +
+                "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", logo='" + logo + '\'' +

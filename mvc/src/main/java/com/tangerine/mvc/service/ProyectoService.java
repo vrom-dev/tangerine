@@ -8,12 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class ProyectosService {
+public class ProyectoService {
 
     public List<Proyecto> getProyectos(){
         RestTemplate restTemplate = new RestTemplate();
-
-        Proyecto[] proyectosArray = restTemplate.getForObject("https://localhost:5000/api/proyecto", Proyecto[].class);
+        Proyecto[] proyectosArray = restTemplate.getForObject("http://localhost:5000/api/proyecto", Proyecto[].class);
         return Arrays.asList(proyectosArray);
     }
 }
