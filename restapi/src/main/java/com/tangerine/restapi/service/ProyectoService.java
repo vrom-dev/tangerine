@@ -24,4 +24,6 @@ public class ProyectoService {
     public Proyecto saveProyecto(Proyecto proyecto) {
         return proyectoRepository.save(proyecto);
     }
+
+
 }
