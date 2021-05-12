@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *  Autor     Es un metodo de comunicacion ,permite intercambiar informacion a traves de una red con la bbdd
+ * @author Victor Romero (Tangerine)
+ * @version 0.0.1
+ * Clase que se encarga de recoger las peticiones del controlador y solicitar al Repositorio
+ * de clientes la accion pertinente
  */
 @Service
 public class ClienteService {
@@ -16,8 +19,8 @@ public class ClienteService {
     ClienteRepository clienteRepository;
 
     /**
-     * Lista a los clientes y los encuentra devolviendo la informacion de la BBDD
-     * @return
+     * Metodo que recupera una lista con los clientes en la base de datos
+     * @return List<Cliente>
      */
     public List<Cliente> findAll() {
         return clienteRepository.findAll();
