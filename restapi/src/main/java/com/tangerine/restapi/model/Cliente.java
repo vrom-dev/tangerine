@@ -3,6 +3,10 @@ package com.tangerine.restapi.model;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Clase-Entidad conectada a la Base de Datos que mapea la tabla Clientes
+ * Contiene los atributos, getters, setters y toString correspondietes
+ */
 @Entity
 @Table(name="clientes")
 public class Cliente {
