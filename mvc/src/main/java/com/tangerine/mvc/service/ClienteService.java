@@ -8,6 +8,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Clienteservice usa un objeto proxy para acceder al Servicio Web. En el momento de la solicitud,
+ */
 @Service
 public class ClienteService {
 
