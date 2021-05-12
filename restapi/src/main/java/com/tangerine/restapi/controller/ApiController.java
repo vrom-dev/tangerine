@@ -1,9 +1,13 @@
 package com.tangerine.restapi.controller;
 
 import com.tangerine.restapi.exceptions.ProjectNotFoundException;
+import com.tangerine.restapi.model.Cargo;
 import com.tangerine.restapi.model.Cliente;
+import com.tangerine.restapi.model.Persona;
 import com.tangerine.restapi.model.Proyecto;
+import com.tangerine.restapi.service.CargoService;
 import com.tangerine.restapi.service.ClienteService;
+import com.tangerine.restapi.service.PersonaService;
 import com.tangerine.restapi.service.ProyectoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +31,12 @@ public class ApiController {
 
     @Autowired
     ClienteService clienteService;
+
+    @Autowired
+    CargoService cargoService;
+
+    @Autowired
+    PersonaService personaService;
 
     /**
      * Mapeando un GET en la ruta /api/proyecto devuelve una
@@ -74,4 +84,33 @@ public class ApiController {
     public List<Cliente> getAllCliente() {
         return clienteService.findAll();
     }
+
+
+    /* Metodos de Cargo y Persona */
+
+
+    @GetMapping("/socios")
+    public List<Persona> getAllPersonas() {
+
+        return personaService.findAll();
+    }
+
+    @GetMapping("socio/{id}")
+    public Persona getPersona(@PathVariable Integer id) {
+
+        return personaService.findById(id).orElseThrow(/*Todo*/);
+    }
+
+    @PostMapping("/socio")
+    public ResponseEntity<Persona> savePersona(@RequestBody Persona persona) {
+
+        Persona p = personaService.savePersona(persona);
+        return new ResponseEntity<>(p, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/cargo")
+    public List<Cargo> getAllCargos() {
+        return cargoService.findAll();
+    }
+
 }
