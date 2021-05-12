@@ -30,7 +30,8 @@ public class PersonaService {
      */
     public Persona addPersona(Persona personaToAdd) {
         RestTemplate restTemplate = new RestTemplate();
-        Persona persona = restTemplate.postForObject("http://localhost:5000/api/persona", Persona[].class)
+        Persona persona = restTemplate.postForObject("http://localhost:5000/api/persona", personaToAdd, Persona.class);
         return persona;
     }
+
 }

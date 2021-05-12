@@ -32,7 +32,7 @@ public class ProyectoController {
     public String getAllProyectos(Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();;
         model.addAttribute("listaproyectos", proyectos);
-        return "proyectos";
+        return "/backoffice/proyectos";
     }
 
     //Le pasamos un model con la lista de clientes, y un proyecto vacío
@@ -40,14 +40,14 @@ public class ProyectoController {
     public String showProyectoForm(Model model, Proyecto proyecto) {
         List<Cliente> clientes = clienteService.getClientes();
         model.addAttribute("clientes", clientes);
-        return "proyectoForm";
+        return "/backoffice/proyectoForm";
     }
 
     // Add proyecto
     @PostMapping("/add")
     public ModelAndView addProyecto(Proyecto proyecto) {
         proyectoService.addProyecto(proyecto);
-        return new ModelAndView("redirect:/proyectos");
+        return new ModelAndView("redirect:/admin/proyectos");
     }
 
     //editar proyecto
@@ -60,7 +60,7 @@ public class ProyectoController {
     @GetMapping("/delete")
     public String deleteUser(@RequestParam("id") int id) {
         //TO_BE_CHANGED.deleteById(id);
-        return "UserList";
+        return "";
     }
 
     //guardar proyecto
