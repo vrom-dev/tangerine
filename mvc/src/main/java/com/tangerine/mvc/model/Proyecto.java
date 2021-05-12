@@ -1,8 +1,17 @@
 package com.tangerine.mvc.model;
+/**
+ * @author Alberto (Tangerine)
+ *
+ */
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+/**
+ * Creacion de una clase llamada Proyecto, con los siguientes atributos: id, proyecto, fechafin, resumen,
+ * descripcion, imagen y cliente.
+ */
 
 public class Proyecto {
     @Id
@@ -15,9 +24,23 @@ public class Proyecto {
     private String imagen;
     private Cliente cliente;
 
+    /**
+     * Contructor vacio
+     */
+
     public Proyecto() {
     }
 
+    /**
+     * Constructor con los siguientes parametros:
+     * @param id
+     * @param proyecto
+     * @param fechafin
+     * @param resumen
+     * @param descripcion
+     * @param imagen
+     * @param cliente
+     */
     public Proyecto(Integer id, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente cliente) {
         this.id = id;
         this.proyecto = proyecto;
@@ -28,6 +51,9 @@ public class Proyecto {
         this.cliente = cliente;
     }
 
+    /**
+     * Getters y Setters
+     */
     public Integer getId() {
         return id;
     }
@@ -84,6 +110,10 @@ public class Proyecto {
         this.cliente = cliente;
     }
 
+    /**
+     * Metodo toString que devuelve un String con todos los atributos de la clase
+     *
+     */
     @Override
     public String toString() {
         return "Proyecto{" +
