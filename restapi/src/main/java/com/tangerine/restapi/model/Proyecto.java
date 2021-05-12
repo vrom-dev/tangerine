@@ -1,6 +1,11 @@
 package com.tangerine.restapi.model;
 
 import javax.persistence.*;
+
+/**
+ * Clase-Entidad conectada a la Base de Datos que mapea la tabla Proyectos
+ * Contiene los atributos, getters, setters y toString correspondietes
+ */
 @Entity
 @Table(name="proyectos")
 public class Proyecto {
