@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-
-<style>
-
+    <style>
     table {
         width = 90%;
         margin= auto;
-
     };
-
-
-</style>
-
-
+    </style>
 </head>
 <body>
-    <table>
-        <th>Proyecto</th>
-        <th>Fecha fin</th>
-        <th>Resumen</th>
-        <th>Descripción</th>
-        <th>Imagen</th>
-        <th>Cliente</th>
-        <tr th:each="proyecto: ${listaproyectos}"
-        >
-            <td th:text="${proyecto.proyecto}" />
-            <td th:text="${proyecto.fechafin}" />
-            <td th:text="${proyecto.resumen}" />
-            <td th:text="${proyecto.descripcion}" />
-            <td th:text="${proyecto.imagen}" />
-            <td th:text="${proyecto.cliente.nombre}" />
-
-        </tr>
-
-    </table>
-
-    <a th:href="@{/proyectos/add}">Dar de alta un nuevo proyecto</a>
-
+<table>
+    <th>Proyecto</th>
+    <th>Fecha fin</th>
+    <th>Resumen</th>
+    <th>Descripción</th>
+    <th>Imagen</th>
+    <th>Cliente</th>
+    <tr th:each="proyecto: ${listaproyectos}">
+        <td th:text="${proyecto.proyecto}" />
+        <td th:text="${proyecto.fechafin}" />
+        <td th:text="${proyecto.resumen}" />
+        <td th:text="${proyecto.descripcion}" />
+        <td th:text="${proyecto.imagen}" />
+        <td th:text="${proyecto.cliente.nombre}" />
+    </tr>
+</table>
+<a th:href="@{/proyectos/add}">Dar de alta un nuevo proyecto</a>
 </body>
 </html>

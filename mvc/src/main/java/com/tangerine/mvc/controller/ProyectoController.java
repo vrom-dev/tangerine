@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -29,8 +30,7 @@ public class ProyectoController {
 
     @GetMapping("")
     public String getAllProyectos(Model model) {
-        List<Proyecto> proyectos = proyectoService.getProyectos();
-        //proyectos.forEach(proyecto -> System.out.println(proyecto));
+        List<Proyecto> proyectos = proyectoService.getProyectos();;
         model.addAttribute("listaproyectos", proyectos);
         return "proyectos";
     }
@@ -45,9 +45,9 @@ public class ProyectoController {
 
     // Add proyecto
     @PostMapping("/add")
-    public String addProyecto(Proyecto proyecto) {
+    public ModelAndView addProyecto(Proyecto proyecto) {
         proyectoService.addProyecto(proyecto);
-        return "proyectos";
+        return new ModelAndView("redirect:/proyectos");
     }
 
     //editar proyecto

@@ -3,10 +3,11 @@ package com.tangerine.restapi.controller;
 import com.tangerine.restapi.exceptions.ProjectNotFoundException;
 import com.tangerine.restapi.model.Cliente;
 import com.tangerine.restapi.model.Proyecto;
-import com.tangerine.restapi.repository.ClienteRepository;
 import com.tangerine.restapi.service.ClienteService;
 import com.tangerine.restapi.service.ProyectoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +33,13 @@ public class ApiController {
                 .orElseThrow(ProjectNotFoundException::new);
     }
 
+    /**
+     *  ResponseeEntity wrapper
+     */
     @PostMapping("/proyecto")
-    public Proyecto saveProyecto(@RequestBody Proyecto proyecto) {
-        return proyectoService.saveProyecto(proyecto);
+    public ResponseEntity<Proyecto> saveProyecto(@RequestBody Proyecto proyecto) {
+        Proyecto p = proyectoService.saveProyecto(proyecto);
+        return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
     @GetMapping("/cliente")
