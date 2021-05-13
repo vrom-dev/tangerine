@@ -74,30 +74,20 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
-<<<<<<< HEAD
     /* EDITAR */
-
     @PutMapping ("/proyecto/edit")
     public Proyecto editProyecto(@RequestBody Proyecto proyecto) {
 
         System.out.println(proyecto);
 
         return proyectoService.editProyecto(proyecto);
-=======
-    @DeleteMapping("/proyecto/{id}")
-    public void deleteProyecto(@PathVariable Integer id){
-        proyectoService.deleteProyecto(id);
->>>>>>> c9039f6df6620ce8d721cc98454b9390257116e6
     }
 
+    @DeleteMapping("/proyecto/{id}")
+    public void deleteProyecto(@PathVariable Integer id) {
+        proyectoService.deleteProyecto(id);
+    }
 
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> c9039f6df6620ce8d721cc98454b9390257116e6
     /**
      * Mapea un GET desde la ruta /cliente y devuelve todos los clientes
      * que hay en la BBDD para poder mostrarlos en el formulario de
@@ -111,8 +101,6 @@ public class ApiController {
 
 
     /* Metodos de Cargo y Persona */
-
-
     @GetMapping("/socio")
     public List<Persona> getAllPersonas() {
 

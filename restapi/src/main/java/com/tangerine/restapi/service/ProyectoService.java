@@ -49,15 +49,6 @@ public class ProyectoService {
         return proyectoRepository.save(proyecto);
     }
 
-<<<<<<< HEAD
-    public Proyecto editProyecto2(Proyecto proyecto) {
-
-        Proyecto p = proyectoRepository.findById(proyecto.getIdproyecto()).get();
-        p.setProyecto(proyecto.getProyecto());
-
-        return p;
-    }
-
     public Proyecto editProyecto(Proyecto newProyecto) {
         Integer id = newProyecto.getIdproyecto();
         if (proyectoRepository.findById(id).isPresent()) {
@@ -75,21 +66,8 @@ public class ProyectoService {
         return newProyecto;
     }
 
-
-//    public Proyecto updateCustomerContacts(Proyecto proyecto) {
-//        Optional p = proyectoRepository.findById(proyecto.getId());
-//
-//
-//        myCustomer.phone = phone;
-//        repo.save(myCustomer);
-//    }
-
-=======
     public void deleteProyecto(Integer id){
         proyectoRepository.deleteById(id);
     }
-
->>>>>>> c9039f6df6620ce8d721cc98454b9390257116e6
-
 
 }
