@@ -323,15 +323,15 @@
     <section id="proyectos" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-white min-vh-100">
         <div class="container d-flex flex-column justify-content-center">
             <h2 class="display-3 text-center fw-bold text-green mb-4">Proyectos destacados</h2>
-            <div class="container">
+            <div class="container text-center">
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
+                    <div class="col-12 col-lg-4 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
                         <div class="card card-proyectos shadow">
                             <div class="card-header"
                                  th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
                             <div class="card-body">
                                 <h5 class="card-title" th:text="${proyecto.proyecto}"/>
-                                <p class="card-text" th:text="${proyecto.resumen}"/>
+                                <p class="card-text text-start" th:text="${proyecto.resumen}"/>
                             </div>
                         </div>
                     </div>
@@ -342,11 +342,12 @@
             </div>
         </div>
     </section>
+
     <!--** CLIENTES -->
     <section id="clientes" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-light min-vh-100">
         <div class="container d-flex flex-column justify-content-center">
-            <h2 class="display-3 text-center fw-bold text-orange mb-4">Para quién trabajamos</h2>
-            <div>
+            <h2 class="display-3 text-center fw-bold text-orange mb-5">Nuestros clientes</h2>
+            <div class="m-3">
                 <div class="bd-example">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -390,50 +391,75 @@
     </section>
 </main>
 
-<footer id="footer">
-    <div class="footer p-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h5>Soporte</h5>
-                    <ul>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Localización</a></li>
-                        <li><a href="#">Clientes</a></li>
-                    </ul>
+<!-- FOOTER -->
+<footer class="text-center bg-footer text-light">
+    <!-- Enlaces  -->
+    <section class="p-5">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-seedling me-3"></i>Tangerine
+                    </h6>
+                    <p>
+                        Etiam ut dolor id ante scelerisque mattis. Nullam efficitur condimentum justo quis rhoncus.
+                        Sed faucibus congue lectus. Sed tincidunt tortor sed felis efficitur, at commodo quam
+                        rutrum.
+                    </p>
                 </div>
-
-                <div class="col-sm-4">
-                    <h5>Servicios</h5>
-                    <ul>
-                        <li><a href="#">Diseño Web</a></li>
-                        <li><a href="#">Ciberseguridad</a></li>
-                        <li><a href="#">Plantillas web</a></li>
-                        <li><a href="#">Aplicaciones</a></li>
-                        <li><a href="#">Programas</a></li>
-                    </ul>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Enlaces
+                    </h6>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Inicio</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Sobre nosotros</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Proyectos</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Contacto</a>
+                    </p>
                 </div>
-                <div class="col-sm-4">
-                    <h5>Productos</h5>
-                    <ul>
-                        <li><a href="#">Plantillas web</a></li>
-                        <li><a href="#">Cursos Programación</a></li>
-                        <li><a href="#">Segudidad Digital</a></li>
-                        <li><a href="#">Optimización BBDD</a></li>
-                        <li><a href="#">Seo</a></li>
-                    </ul>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Localización</h6>
+                    <p><i class="fas fa-home me-3"></i>Calle abcdef, 00000, ES</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@tangerine.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 00 000 000 00</p>
                 </div>
             </div>
         </div>
-        <div class="pt-2 pb-2">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        Tangerine &#169; 2021 Todos los derechos reservados
+    </section>
+    <!-- Redes sociales -->
+    <section class="mb-4">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+        ></a>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(255, 132, 0, 0.25);">
+        Tangerine &#169; 2021
+        <span class="text-reset fw-bold"> Todos los derechos reservados</span>
     </div>
 </footer>
 

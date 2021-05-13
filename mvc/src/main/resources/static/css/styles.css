@@ -88,7 +88,7 @@ header .img-logo {
   border: none;
   color: #fff;
   transition: 0.3s;
-  font-size: .8em;
+  font-size: 1em;
 }
 
 .btn:hover {
@@ -96,21 +96,18 @@ header .img-logo {
   color: #fff;
 }
 
-.btn-jumbotron {
-  font-size: 1em;
-}
 .btn-jumbotron:hover {
   background-color: #fff;
   color: #ffae00;
 }
 
 
-#jumbotron .jumbotron {
+.jumbotron {
   background-image: linear-gradient(180deg, #ff8400 0%, #ffc446 100%);
   color: white;
 }
 
-#jumbotron .jumbotron img {
+.jumbotron img {
   max-width: 100%;
 }
 
@@ -161,43 +158,13 @@ header .img-logo {
 
 /** FOOTER */
 
-#footer .footer {
-  background-color: rgba(255, 132, 0, 0.7);
-  text-align: center;
-  color: #fff;
-  letter-spacing: 2px;
+.bg-footer {
+  background-image: linear-gradient(180deg, #ff8400 0%, #ffc446 100%);
 }
 
-#footer a {
-  color: white;
-}
-
-#footer ul {
-  padding-left: 0;
-}
-
-#footer h5 {
-  font-size: 1.8em;
-}
-
-#footer li {
-  list-style: none;
-}
-
-#footer .fab {
-  font-size: 2em;
-  transition: color 0.5s;
-}
-
-#footer .fab:hover {
-  color: #6b9a22;
-  transition: color 0.5s;
-}
-
-/** FOOTER */
-
+/** OTROS */
 .card-proyectos:hover {
-  background-color: rgba(107, 154, 34, .85);
+  background-color: #6a9b22;
   color: #fff;
   transition: all 0.3s;
 }
