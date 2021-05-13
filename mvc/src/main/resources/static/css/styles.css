@@ -13,7 +13,6 @@ header .img-logo {
 
 .navbar-nav {
   text-align: center;
-  /* text-transform: uppercase; */
   font-weight: 500;
 }
 
@@ -146,10 +145,8 @@ header .img-logo {
 /** CLIENTES */
 
 #clientes .bd-example {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 40%;
   margin: auto;
-  max-width: 550px;
+  max-width: 800px;
 }
 
 #clientes h2 {
@@ -220,6 +217,5 @@ header .img-logo {
 
 .card-header {
     width: 100%;
-    background-color: blue;
-    height: 200px;
+    height: 300px;
 }

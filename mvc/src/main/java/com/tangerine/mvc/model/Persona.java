@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 /**
  *
- *   Creacion de una clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellido, resumen,
+ *   Creacion de una clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellidos, resumen,
  *   foto, cargo
  *
  */
@@ -19,7 +19,7 @@ public class Persona {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idpersona;
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private String resumen;
     private String foto;
     private Cargo cargo;
@@ -34,16 +34,16 @@ public class Persona {
      * Constructor con los siguientes parametros
      * @param idpersona
      * @param nombre
-     * @param apellido
+     * @param apellidos
      * @param resumen
      * @param foto
      * @param cargo
      */
 
-    public Persona(Integer idpersona, String nombre, String apellido, String resumen, String foto, Cargo cargo) {
+    public Persona(Integer idpersona, String nombre, String apellidos, String resumen, String foto, Cargo cargo) {
         this.idpersona = idpersona;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.apellidos = apellidos;
         this.resumen = resumen;
         this.foto = foto;
         this.cargo = cargo;
@@ -70,12 +70,12 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getResumen() {
@@ -112,7 +112,7 @@ public class Persona {
         return "Persona{" +
                 "idpersona=" + idpersona +
                 ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
+                ", apellidos='" + apellidos + '\'' +
                 ", resumen='" + resumen + '\'' +
                 ", foto='" + foto + '\'' +
                 ", cargo=" + cargo +
