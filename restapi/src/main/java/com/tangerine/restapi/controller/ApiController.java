@@ -74,6 +74,13 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/proyecto/{id}")
+    public void deleteProyecto(@PathVariable Integer id){
+        proyectoService.deleteProyecto(id);
+    }
+
+
+
     /**
      * Mapea un GET desde la ruta /cliente y devuelve todos los clientes
      * que hay en la BBDD para poder mostrarlos en el formulario de

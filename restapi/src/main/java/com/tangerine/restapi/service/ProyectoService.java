@@ -46,5 +46,9 @@ public class ProyectoService {
         return proyectoRepository.save(proyecto);
     }
 
+    public void deleteProyecto(Integer id){
+        proyectoRepository.deleteById(id);
+    }
+
 
 }
