@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Creacion de una clase de servicio llamada ProyectoService
@@ -24,6 +25,15 @@ public class ProyectoService {
         return Arrays.asList(proyectosArray);
     }
 
+    public Proyecto getById(Integer id){
+
+        // Not sure ir works Todo
+        RestTemplate restTemplate = new RestTemplate();
+        Proyecto proyecto = restTemplate.getForObject("http://localhost:5000/api/proyecto/{id}", Proyecto.class, id);
+
+        return proyecto;
+    }
+
     /**
      * Metodo que inserta un poryecto a la base de datos y devuelve el proyecto insertado.
      * @param proyectoToAdd
@@ -33,5 +43,13 @@ public class ProyectoService {
         RestTemplate restTemplate = new RestTemplate();
         Proyecto proyecto = restTemplate.postForObject("http://localhost:5000/api/proyecto", proyectoToAdd, Proyecto.class);
         return proyecto;
+    }
+
+    public Proyecto updateProyecto(Proyecto updatedProyecto) {
+
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put("http://localhost:5000/api/proyecto/edit", updatedProyecto);
+
+     return updatedProyecto;
     }
 }

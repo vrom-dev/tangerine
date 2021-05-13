@@ -74,6 +74,21 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
+    /* EDITAR */
+
+    @PutMapping ("/proyecto/edit")
+    public Proyecto editProyecto(@RequestBody Proyecto proyecto) {
+
+        System.out.println(proyecto);
+
+        return proyectoService.editProyecto(proyecto);
+    }
+
+
+
+
+
+
     /**
      * Mapea un GET desde la ruta /cliente y devuelve todos los clientes
      * que hay en la BBDD para poder mostrarlos en el formulario de

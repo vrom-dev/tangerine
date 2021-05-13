@@ -7,10 +7,7 @@ import com.tangerine.mvc.service.ProyectoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,12 +25,14 @@ public class ProyectoController {
 
     private static final Logger log = LoggerFactory.getLogger(ProyectoController.class);
 
+
     @GetMapping("")
     public String getAllProyectos(Model model) {
-        List<Proyecto> proyectos = proyectoService.getProyectos();;
+        List<Proyecto> proyectos = proyectoService.getProyectos();
         model.addAttribute("listaproyectos", proyectos);
         return "/backoffice/proyectos";
     }
+
 
     //Le pasamos un model con la lista de clientes, y un proyecto vacío
     @GetMapping("/add")
@@ -43,6 +42,7 @@ public class ProyectoController {
         return "/backoffice/proyectoForm";
     }
 
+
     // Add proyecto
     @PostMapping("/add")
     public ModelAndView addProyecto(Proyecto proyecto) {
@@ -50,11 +50,26 @@ public class ProyectoController {
         return new ModelAndView("redirect:/admin/proyectos");
     }
 
+    /* UPDATE */
+
     //editar proyecto
-    @GetMapping("/edit")
-    public String editUser() {
-        return "";
+    @GetMapping("/update/{id}")
+    public String showProyectoToUpdate(@PathVariable Integer id, Model model) {
+        List<Cliente> clientes = clienteService.getClientes();
+
+        Proyecto proyecto = proyectoService.getById(id);
+        model.addAttribute("clientes", clientes);
+        model.addAttribute("proyecto", proyecto);
+        return "/backoffice/proyectoFormEdit";
     }
+
+    @PostMapping("/update")
+    public ModelAndView editProyecto(Proyecto proyecto) {
+
+        proyectoService.updateProyecto(proyecto);
+        return new ModelAndView("redirect:/admin/proyectos");
+    }
+
 
     //borra proyecto
     @GetMapping("/delete")
