@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Proyectos - Panel de Administracion</title>
+    <!-- Bootstrap CSS -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
+    <!--Tangerine styles -->
+    <link rel="stylesheet" href="../css/styles.css"/>
     <style>
     table {
         width = 90%;
@@ -13,13 +19,54 @@
     </style>
 </head>
 <body>
-<table>
+
+<header>
+    <!--** NAVEGADOR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../img/tangerine-admin.png" alt="tangerine-logo"
+                                                  class="img-logo"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse posicion-menu" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-hover="Inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Sobre nosotros">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Servicios">
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Noticias">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Contacta">Contacta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="jumbotron">
+    <div class="container-fluid min-vh-100 jumbotron p-4">
+        <div class="container rounded">
+
+<table class="table table-striped table-hover tablacustom">
     <th>Proyecto</th>
     <th>Fecha fin</th>
     <th>Resumen</th>
     <th>Descripción</th>
     <th>Imagen</th>
     <th>Cliente</th>
+    <th>Gestionar</th>
     <tr th:each="proyecto: ${listaproyectos}">
         <td th:text="${proyecto.proyecto}" />
         <td th:text="${proyecto.fechafin}" />
@@ -27,8 +74,16 @@
         <td th:text="${proyecto.descripcion}" />
         <td th:text="${proyecto.imagen}" />
         <td th:text="${proyecto.cliente.nombre}" />
+        <td><a th:href="@{/admin/proyectos/update/{id}(id=${proyecto.idproyecto})}">Editar</a> - <a href="#">Borrar</a></td>
     </tr>
 </table>
 <a th:href="@{/admin/proyectos/add}">Dar de alta un nuevo proyecto</a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
