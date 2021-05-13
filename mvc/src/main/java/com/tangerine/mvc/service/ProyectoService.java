@@ -17,15 +17,15 @@ import java.util.Optional;
 @Service
 public class ProyectoService {
     /**
-     *Metodo que hace una petecion a una apirest que devuelve una lista de proyectos
+     * Metodo que hace una petecion a una apirest que devuelve una lista de proyectos
      */
-    public List<Proyecto> getProyectos(){
+    public List<Proyecto> getProyectos() {
         RestTemplate restTemplate = new RestTemplate();
         Proyecto[] proyectosArray = restTemplate.getForObject("http://localhost:5000/api/proyecto", Proyecto[].class);
         return Arrays.asList(proyectosArray);
     }
 
-    public Proyecto getById(Integer id){
+    public Proyecto getById(Integer id) {
 
         // Not sure ir works Todo
         RestTemplate restTemplate = new RestTemplate();
@@ -36,6 +36,7 @@ public class ProyectoService {
 
     /**
      * Metodo que inserta un poryecto a la base de datos y devuelve el proyecto insertado.
+     *
      * @param proyectoToAdd
      * @return proyecto
      */
@@ -50,7 +51,7 @@ public class ProyectoService {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.put("http://localhost:5000/api/proyecto/edit", updatedProyecto);
 
-     return updatedProyecto;
+        return updatedProyecto;
     }
 
 }

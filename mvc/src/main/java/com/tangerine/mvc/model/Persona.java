@@ -9,14 +9,12 @@ import javax.persistence.Id;
  */
 
 /**
- *
- *   Creacion de una clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellidos, resumen,
- *   foto, cargo
- *
+ * Creacion de una clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellidos, resumen,
+ * foto, cargo
  */
 public class Persona {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idpersona;
     private String nombre;
     private String apellidos;
@@ -32,6 +30,7 @@ public class Persona {
 
     /**
      * Constructor con los siguientes parametros
+     *
      * @param idpersona
      * @param nombre
      * @param apellidos
@@ -51,6 +50,7 @@ public class Persona {
 
     /**
      * Getter Y Setters
+     *
      * @return
      */
 
@@ -104,6 +104,7 @@ public class Persona {
 
     /**
      * Metodo toString que devuelve un String con todos los atributos de la clase
+     *
      * @return
      */
 

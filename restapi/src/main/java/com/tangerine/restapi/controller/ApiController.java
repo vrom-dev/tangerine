@@ -23,7 +23,7 @@ import java.util.List;
  * Tiene injectadas dependencias de ProyectoService y ClienteService
  */
 @RestController
-@RequestMapping(path="/api")
+@RequestMapping(path = "/api")
 public class ApiController {
 
     @Autowired
@@ -41,6 +41,7 @@ public class ApiController {
     /**
      * Mapeando un GET en la ruta /api/proyecto devuelve una
      * lista de todos los proyectos de la BBDD
+     *
      * @return Lista de proyectos
      */
     @GetMapping("/proyecto")
@@ -51,6 +52,7 @@ public class ApiController {
     /**
      * Mapeando un GET en la ruta /api/idProyecto devuelve el
      * proyecto con ID espeficicada en la URL desde la BBDD
+     *
      * @param id
      * @return Proyecto con id especificado
      */
@@ -65,6 +67,7 @@ public class ApiController {
      * Mapea un POST desde el formulario que hay en la ruta /proyecto
      * Ese formulario que cuando es enviado debe contener la informacion
      * de un nuevo proyecto es guardado en la BBDD
+     *
      * @param proyecto
      * @return Devuelve el mismo proyecto que es introducido
      */
@@ -75,7 +78,7 @@ public class ApiController {
     }
 
     /* EDITAR */
-    @PutMapping ("/proyecto/edit")
+    @PutMapping("/proyecto/edit")
     public Proyecto editProyecto(@RequestBody Proyecto proyecto) {
 
         System.out.println(proyecto);
@@ -92,6 +95,7 @@ public class ApiController {
      * Mapea un GET desde la ruta /cliente y devuelve todos los clientes
      * que hay en la BBDD para poder mostrarlos en el formulario de
      * creacion de un nuevo proyecto
+     *
      * @return Lista de clientes
      */
     @GetMapping("/cliente")

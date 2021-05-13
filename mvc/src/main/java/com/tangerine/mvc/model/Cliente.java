@@ -12,7 +12,7 @@ import javax.persistence.Id;
  */
 public class Cliente {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idcliente;
     private String nombre;
     private String descripcion;
@@ -26,6 +26,7 @@ public class Cliente {
 
     /**
      * Constructor con los siguientes parametros:
+     *
      * @param idcliente
      * @param nombre
      * @param descripcion

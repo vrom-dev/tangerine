@@ -7,30 +7,30 @@ import javax.persistence.*;
  * Contiene los atributos, getters, setters y toString correspondietes
  */
 @Entity
-@Table(name="proyectos")
+@Table(name = "proyectos")
 public class Proyecto {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idproyecto;
 
-    @Column(name="proyecto")
+    @Column(name = "proyecto")
     private String proyecto;
 
-    @Column(name="fechafin")
+    @Column(name = "fechafin")
     private String fechafin;
 
-    @Column(name="resumen")
+    @Column(name = "resumen")
     private String resumen;
 
-    @Column(name="descripcion")
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name="imagen")
+    @Column(name = "imagen")
     private String imagen;
 
     @ManyToOne
-    @JoinColumn(name="idcliente")
+    @JoinColumn(name = "idcliente")
     private Cliente cliente;
 
     public Proyecto() {

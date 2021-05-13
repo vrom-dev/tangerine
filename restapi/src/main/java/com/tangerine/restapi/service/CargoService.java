@@ -14,9 +14,6 @@ public class CargoService {
     CargoRepository cargoRepository;
 
     public List<Cargo> findAll() {
-
         return cargoRepository.findAll();
     }
-
-
 }

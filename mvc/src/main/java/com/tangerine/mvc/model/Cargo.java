@@ -2,6 +2,7 @@ package com.tangerine.mvc.model;
 /**
  * @author ALBERTO  (Tangerine)
  */
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +26,7 @@ public class Cargo {
 
     /**
      * Constructor con los siguientes parametros:
+     *
      * @param idcargo
      * @param cargo
      */

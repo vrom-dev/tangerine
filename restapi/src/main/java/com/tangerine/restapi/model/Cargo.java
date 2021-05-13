@@ -4,15 +4,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="cargos")
+@Table(name = "cargos")
 public class Cargo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idcargo")
+    @Column(name = "idcargo")
     private int idcargo;
 
-    @Column(name="cargo")
+    @Column(name = "cargo")
     private String cargo;
 
     @OneToMany(mappedBy = "cargo")

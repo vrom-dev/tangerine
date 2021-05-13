@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class PersonaService {
-    public List<Persona> getPersonas(){
+    public List<Persona> getPersonas() {
         RestTemplate restTemplate = new RestTemplate();
         Persona[] personasArray = restTemplate.getForObject("http://localhost:5000/api/socio", Persona[].class);
         return Arrays.asList(personasArray);
@@ -25,6 +25,7 @@ public class PersonaService {
 
     /**
      * Metodo que inserta una persona a la base de datos y devuelve a la persona insertada.
+     *
      * @param personaToAdd
      * @return persona
      */

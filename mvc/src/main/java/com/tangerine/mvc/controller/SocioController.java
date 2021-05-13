@@ -1,6 +1,5 @@
 package com.tangerine.mvc.controller;
 
-import com.tangerine.mvc.model.Persona;
 import com.tangerine.mvc.model.Proyecto;
 import com.tangerine.mvc.service.CargoService;
 import com.tangerine.mvc.service.ClienteService;
@@ -33,7 +32,7 @@ public class SocioController {
 
     @GetMapping("")
     public String getAllProyectos(Model model) {
-        List<Proyecto> proyectos = proyectoService.getProyectos();;
+        List<Proyecto> proyectos = proyectoService.getProyectos();
         model.addAttribute("listaproyectos", proyectos);
         return "/backoffice/socios";
     }

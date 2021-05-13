@@ -16,20 +16,16 @@ public class PersonaService {
     @Autowired
     PersonaRepository personaRepository;
 
-    public List<Persona> findAll(){
-
+    public List<Persona> findAll() {
         return personaRepository.findAll();
     }
 
-    public Optional<Persona> findById(Integer id){
-
+    public Optional<Persona> findById(Integer id) {
         return personaRepository.findById(id);
     }
 
     public Persona savePersona(Persona persona) {
-
         return personaRepository.save(persona);
-
     }
 
 

@@ -22,6 +22,7 @@ public class ProyectoService {
 
     /**
      * Metodo que recupera una lista con los proyectos en la base de datos
+     *
      * @return List<Proyecto>
      */
     public List<Proyecto> findAll() {
@@ -30,6 +31,7 @@ public class ProyectoService {
 
     /**
      * Metodo que recupera un objeto Proyecto de la base de datos en funcion del ID
+     *
      * @param id
      * @return Proyecto
      */
@@ -64,7 +66,7 @@ public class ProyectoService {
         return newProyecto;
     }
 
-    public void deleteProyecto(Integer id){
+    public void deleteProyecto(Integer id) {
         proyectoRepository.deleteById(id);
     }
 

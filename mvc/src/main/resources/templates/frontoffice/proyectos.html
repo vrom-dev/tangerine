@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awesome -->
-    <link href="assets/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
@@ -18,8 +18,9 @@
     <!--** NAVEGADOR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../"><img src="img/tangerine.png" alt="tangerine-logo" class="img-logo" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="../"><img src="img/tangerine.png" alt="tangerine-logo" class="img-logo"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse posicion-menu" id="navbarNav">
@@ -50,34 +51,109 @@
             <h2 class="display-3 text-center fw-bold text-orange mb-5">Nuestro trabajo</h2>
             <article class="container">
                 <div class="row">
-                        <div class="col-12 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
-                            <div class="rounded shadow mb-3">
-                                <div class="card-header" th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title" th:text="${proyecto.proyecto}"/>
-                                    <p class="card-text" th:text="${proyecto.resumen}"/>
-                                    <button class="btn btn-tangerine btn-lg" type="button" data-bs-toggle="collapse" th:attr="data-bs-target='#proyecto' + ${proyecto.idproyecto}">
-                                        Ver más
-                                    </button>
-                                    <div class="collapse mt-4" th:id="'proyecto' +${proyecto.idproyecto}">
-                                        <p th:text="${proyecto.descripcion}">
-                                    </div>
-                                </div>
-
-                                <div class="card-footer">
-                                    <p class="card-text">
-                                        <small class="text-muted" th:text="${proyecto.fechafin}"/> | <small
-                                            class="text-muted"
-                                            th:text="'Cliente: ' + ${proyecto.cliente.nombre}"/>
-                                    </p>
+                    <div class="col-12 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
+                        <div class="rounded shadow mb-3">
+                            <div class="card-header"
+                                 th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${proyecto.proyecto}"/>
+                                <p class="card-text" th:text="${proyecto.resumen}"/>
+                                <button class="btn btn-tangerine btn-lg" type="button" data-bs-toggle="collapse"
+                                        th:attr="data-bs-target='#proyecto' + ${proyecto.idproyecto}">
+                                    Ver más
+                                </button>
+                                <div class="collapse mt-4" th:id="'proyecto' +${proyecto.idproyecto}">
+                                    <p th:text="${proyecto.descripcion}">
                                 </div>
                             </div>
+
+                            <div class="card-footer">
+                                <p class="card-text">
+                                    <small class="text-muted" th:text="${proyecto.fechafin}"/> | <small
+                                        class="text-muted"
+                                        th:text="'Cliente: ' + ${proyecto.cliente.nombre}"/>
+                                </p>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </article>
         </div>
     </section>
 </main>
+
+<!-- FOOTER -->
+<footer class="text-center bg-footer text-light">
+    <!-- Enlaces  -->
+    <section class="p-5">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-seedling me-3"></i>Tangerine
+                    </h6>
+                    <p>
+                        Etiam ut dolor id ante scelerisque mattis. Nullam efficitur condimentum justo quis rhoncus.
+                        Sed faucibus congue lectus. Sed tincidunt tortor sed felis efficitur, at commodo quam
+                        rutrum.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Enlaces
+                    </h6>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Inicio</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Sobre nosotros</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Proyectos</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-light text-decoration-none">Contacto</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Localización</h6>
+                    <p><i class="fas fa-home me-3"></i>Calle abcdef, 00000, ES</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@tangerine.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 00 000 000 00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Redes sociales -->
+    <section class="mb-4">
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+        ></a>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(255, 132, 0, 0.25);">
+        Tangerine &#169; 2021
+        <span class="text-reset fw-bold"> Todos los derechos reservados</span>
+    </div>
+</footer>
+
 <!-- Bootstrap JS -->
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

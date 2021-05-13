@@ -20,6 +20,7 @@ public class ClienteService {
 
     /**
      * Metodo que recupera una lista con los clientes en la base de datos
+     *
      * @return List<Cliente>
      */
     public List<Cliente> findAll() {

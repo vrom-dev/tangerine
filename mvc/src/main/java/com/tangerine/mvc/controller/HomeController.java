@@ -1,6 +1,5 @@
 package com.tangerine.mvc.controller;
 
-import com.tangerine.mvc.model.Cliente;
 import com.tangerine.mvc.model.Persona;
 import com.tangerine.mvc.model.Proyecto;
 import com.tangerine.mvc.service.PersonaService;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,7 +25,7 @@ public class HomeController {
     public String showHome(Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();
         List<Proyecto> newList = proyectos.stream().limit(3).collect(Collectors.toList());
-        model.addAttribute("listaproyectos",newList);
+        model.addAttribute("listaproyectos", newList);
         return "/frontoffice/index";
     }
 

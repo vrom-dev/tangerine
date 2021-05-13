@@ -3,22 +3,22 @@ package com.tangerine.restapi.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idpersona;
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name="apellidos")
+    @Column(name = "apellidos")
     private String apellidos;
-    @Column(name="resumen")
+    @Column(name = "resumen")
     private String resumen;
-    @Column(name="foto")
+    @Column(name = "foto")
     private String foto;
     @ManyToOne
-    @JoinColumn(name="cargo")
+    @JoinColumn(name = "cargo")
     private Cargo cargo;
 
 

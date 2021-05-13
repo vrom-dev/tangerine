@@ -25,14 +25,12 @@ public class ProyectoController {
 
     private static final Logger log = LoggerFactory.getLogger(ProyectoController.class);
 
-
     @GetMapping("")
     public String getAllProyectos(Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();
         model.addAttribute("listaproyectos", proyectos);
         return "/backoffice/proyectos";
     }
-
 
     //Le pasamos un model con la lista de clientes, y un proyecto vacío
     @GetMapping("/add")
@@ -42,15 +40,12 @@ public class ProyectoController {
         return "/backoffice/proyectoForm";
     }
 
-
     // Add proyecto
     @PostMapping("/add")
     public ModelAndView addProyecto(Proyecto proyecto) {
         proyectoService.addProyecto(proyecto);
         return new ModelAndView("redirect:/admin/proyectos");
     }
-
-    /* UPDATE */
 
     //editar proyecto
     @GetMapping("/update/{id}")
@@ -69,7 +64,6 @@ public class ProyectoController {
         proyectoService.updateProyecto(proyecto);
         return new ModelAndView("redirect:/admin/proyectos");
     }
-
 
     //borra proyecto
     @GetMapping("/delete")

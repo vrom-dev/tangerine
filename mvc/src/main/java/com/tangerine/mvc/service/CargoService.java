@@ -17,9 +17,10 @@ import java.util.List;
 public class CargoService {
     /**
      * Metodo que hace una petecion a la apirest que devuelve una lista de cargos
+     *
      * @return lista de cargos
      */
-    public List<Cargo> getCargos(){
+    public List<Cargo> getCargos() {
         RestTemplate restTemplate = new RestTemplate();
         Cargo[] cargoArray = restTemplate.getForObject("http://localhost:5000/api/cargos", Cargo[].class);
         return Arrays.asList(cargoArray);

@@ -8,20 +8,20 @@ import java.util.List;
  * Contiene los atributos, getters, setters y toString correspondietes
  */
 @Entity
-@Table(name="clientes")
+@Table(name = "clientes")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idcliente")
+    @Column(name = "idcliente")
     private Integer idcliente;
 
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
 
-    @Column(name="descripcion")
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name="logo")
+    @Column(name = "logo")
     private String logo;
 
     @OneToMany(mappedBy = "cliente")

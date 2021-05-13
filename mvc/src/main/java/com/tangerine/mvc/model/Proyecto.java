@@ -1,7 +1,6 @@
 package com.tangerine.mvc.model;
 /**
  * @author Alberto (Tangerine)
- *
  */
 
 import javax.persistence.GeneratedValue;
@@ -15,7 +14,7 @@ import javax.persistence.Id;
 
 public class Proyecto {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idproyecto;
     private String proyecto;
     private String fechafin;
