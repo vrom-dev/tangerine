@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Proyecto {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idproyecto;
     private String proyecto;
     private String fechafin;
     private String resumen;
@@ -33,7 +33,7 @@ public class Proyecto {
 
     /**
      * Constructor con los siguientes parametros:
-     * @param id
+     * @param idproyecto
      * @param proyecto
      * @param fechafin
      * @param resumen
@@ -41,8 +41,8 @@ public class Proyecto {
      * @param imagen
      * @param cliente
      */
-    public Proyecto(Integer id, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente cliente) {
-        this.id = id;
+    public Proyecto(Integer idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente cliente) {
+        this.idproyecto = idproyecto;
         this.proyecto = proyecto;
         this.fechafin = fechafin;
         this.resumen = resumen;
@@ -54,12 +54,12 @@ public class Proyecto {
     /**
      * Getters y Setters
      */
-    public Integer getId() {
-        return id;
+    public Integer getIdproyecto() {
+        return idproyecto;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdproyecto(Integer idproyecto) {
+        this.idproyecto = idproyecto;
     }
 
     public String getProyecto() {
@@ -117,7 +117,7 @@ public class Proyecto {
     @Override
     public String toString() {
         return "Proyecto{" +
-                "id=" + id +
+                "id=" + idproyecto +
                 ", proyecto='" + proyecto + '\'' +
                 ", fechafin='" + fechafin + '\'' +
                 ", resumen='" + resumen + '\'' +

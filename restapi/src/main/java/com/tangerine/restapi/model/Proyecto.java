@@ -46,11 +46,12 @@ public class Proyecto {
         this.cliente = cliente;
     }
 
-    public Integer getId() {
+
+    public Integer getIdproyecto() {
         return idproyecto;
     }
 
-    public void setId(Integer id) {
+    public void setIdproyecto(Integer idproyecto) {
         this.idproyecto = idproyecto;
     }
 

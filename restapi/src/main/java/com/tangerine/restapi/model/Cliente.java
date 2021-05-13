@@ -37,11 +37,11 @@ public class Cliente {
         this.logo = logo;
     }
 
-    public Integer getId() {
+    public Integer getIdcliente() {
         return idcliente;
     }
 
-    public void setId(Integer idcliente) {
+    public void setIdcliente(Integer idcliente) {
         this.idcliente = idcliente;
     }
 
