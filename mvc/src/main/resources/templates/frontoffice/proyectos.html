@@ -45,9 +45,9 @@
 </header>
 
 <main>
-    <section id="tarjetas" class="container-fluid d-flex justify-content-center pb-5 pt-5">
-        <div class="container">
-            <h2 class="text-center mb-4 text-muted">Nuestro trabajo</h2>
+    <section id="proyectos" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-white min-vh-100">
+        <div class="container d-flex flex-column justify-content-center">
+            <h2 class="display-3 text-center fw-bold text-orange mb-5">Nuestro trabajo</h2>
             <article class="container">
                 <div class="row">
                         <div class="col-12 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
@@ -56,7 +56,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${proyecto.proyecto}"/>
                                     <p class="card-text" th:text="${proyecto.resumen}"/>
-                                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" th:attr="data-bs-target='#proyecto' + ${proyecto.idproyecto}">
+                                    <button class="btn btn-tangerine btn-lg" type="button" data-bs-toggle="collapse" th:attr="data-bs-target='#proyecto' + ${proyecto.idproyecto}">
                                         Ver más
                                     </button>
                                     <div class="collapse mt-4" th:id="'proyecto' +${proyecto.idproyecto}">

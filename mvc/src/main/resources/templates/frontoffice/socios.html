@@ -45,9 +45,9 @@
 </header>
 
 <main>
-    <section id="tarjetas" class="container-fluid d-flex justify-content-center pb-5 pt-5">
-        <div class="container">
-            <h2 class="text-center mb-4 text-muted">Socios fundadores</h2>
+    <section id="socios" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-white min-vh-100">
+        <div class="container d-flex flex-column justify-content-center">
+            <h2 class="display-3 text-center fw-bold text-orange mb-5">Socios fundadores</h2>
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
@@ -62,8 +62,12 @@
                                     <h4 th:text="${socio.nombre} + ' ' + ${socio.apellidos}"/>
                                     <p class="text-secondary mb-1" th:text="${socio.cargo.cargo}">Full Stack Developer</p>
                                     <p class="text-muted font-size-sm" th:text="${socio.resumen}">Bay Area, San Francisco, CA</p>
-                                    <button class="btn btn-primary">LinkedIn</button>
-                                    <button class="btn btn-outline-primary">Twitter</button>
+                                    <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#" role="button"
+                                    ><i class="fab fa-linkedin-in"></i
+                                    ></a>
+                                    <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#" role="button"
+                                    ><i class="fab fa-github"></i
+                                    ></a>
                                 </div>
                             </div>
                         </div>
