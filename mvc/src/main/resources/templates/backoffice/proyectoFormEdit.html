@@ -12,8 +12,9 @@
 <p>Formulario</p>
 
 <form th:object="${proyecto}"
-      th:action="@{/admin/proyectos/add}"
+      th:action="@{/admin/proyectos/update}"
       method="post">
+  <input type="hidden" id="idproyecto" th:field="*{idproyecto}">
   <div>
     <label for="proyecto">Proyecto</label>
     <input type="text" id="proyecto" th:field="*{proyecto}">
@@ -42,11 +43,12 @@
               th:value="${cliente.idcliente}"
               th:text="${cliente.nombre}"
       />
+
     </select>
   </div>
 
   <div>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Editar">
 
   </div>
 </form>

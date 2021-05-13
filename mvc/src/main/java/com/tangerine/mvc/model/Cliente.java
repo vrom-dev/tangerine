@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Cliente {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idcliente;
     private String nombre;
     private String descripcion;
     private String logo;
@@ -32,7 +32,7 @@ public class Cliente {
      * @param logo
      */
     public Cliente(Integer idcliente, String nombre, String descripcion, String logo) {
-        this.id = idcliente;
+        this.idcliente = idcliente;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.logo = logo;
@@ -41,12 +41,12 @@ public class Cliente {
     /**
      * Getters y Setters
      */
-    public Integer getId() {
-        return id;
+    public Integer getIdcliente() {
+        return idcliente;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdcliente(Integer idcliente) {
+        this.idcliente = idcliente;
     }
 
     public String getNombre() {
@@ -79,7 +79,7 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "id=" + id +
+                "id=" + idcliente +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", logo='" + logo + '\'' +
