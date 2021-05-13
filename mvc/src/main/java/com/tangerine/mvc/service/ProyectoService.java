@@ -34,4 +34,5 @@ public class ProyectoService {
         Proyecto proyecto = restTemplate.postForObject("http://localhost:5000/api/proyecto", proyectoToAdd, Proyecto.class);
         return proyecto;
     }
+
 }

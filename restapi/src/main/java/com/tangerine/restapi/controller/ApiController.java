@@ -89,7 +89,7 @@ public class ApiController {
     /* Metodos de Cargo y Persona */
 
 
-    @GetMapping("/socios")
+    @GetMapping("/socio")
     public List<Persona> getAllPersonas() {
 
         return personaService.findAll();

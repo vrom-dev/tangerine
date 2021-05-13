@@ -8,13 +8,13 @@ import javax.persistence.Id;
 
 
 /**
- * Creacion de una clase llamada Cargos, con los siguentes atributos: idCargo y cargo.
+ * Creacion de una clase llamada Cargos, con los siguentes atributos: idcargo y cargo.
  */
 
 public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCargo;
+    private Integer idcargo;
     private String cargo;
 
     /**
@@ -25,23 +25,23 @@ public class Cargo {
 
     /**
      * Constructor con los siguientes parametros:
-     * @param idCargo
+     * @param idcargo
      * @param cargo
      */
-    public Cargo(Integer idCargo, String cargo) {
-        this.idCargo = idCargo;
+    public Cargo(Integer idcargo, String cargo) {
+        this.idcargo = idcargo;
         this.cargo = cargo;
     }
 
     /**
      * Getters y Setters
      */
-    public Integer getIdCargo() {
-        return idCargo;
+    public Integer getIdcargo() {
+        return idcargo;
     }
 
-    public void setIdCargo(Integer idCargo) {
-        this.idCargo = idCargo;
+    public void setIdcargo(Integer idcargo) {
+        this.idcargo = idcargo;
     }
 
     public String getCargo() {
@@ -58,7 +58,7 @@ public class Cargo {
     @Override
     public String toString() {
         return "Cargos{" +
-                "idCargo=" + idCargo +
+                "idcargo=" + idcargo +
                 ", cargo='" + cargo + '\'' +
                 '}';
     }
