@@ -10,7 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class HomeController {
@@ -22,13 +25,16 @@ public class HomeController {
     PersonaService personaService;
 
     @GetMapping("/")
-    public String showHome() {
+    public String showHome(Model model) {
+        List<Proyecto> proyectos = proyectoService.getProyectos();
+        List<Proyecto> newList = proyectos.stream().limit(3).collect(Collectors.toList());
+        model.addAttribute("listaproyectos",newList);
         return "/frontoffice/index";
     }
 
     @GetMapping("/proyectos")
     public String showProyectos(Model model) {
-        List<Proyecto> proyectos = proyectoService.getProyectos();;
+        List<Proyecto> proyectos = proyectoService.getProyectos();
         model.addAttribute("listaproyectos", proyectos);
         return "/frontoffice/proyectos";
     }
