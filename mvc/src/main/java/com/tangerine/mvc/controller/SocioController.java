@@ -14,4 +14,7 @@ public class SocioController {
     @Autowired
     CargoService cargoService;
 
+
+
+
 }
