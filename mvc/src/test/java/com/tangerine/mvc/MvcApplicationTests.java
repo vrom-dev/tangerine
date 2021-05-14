@@ -44,7 +44,7 @@ class MvcApplicationTests {
 		mockMvc.perform(mockHttpServletRequestBuilder)
 				.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("img/proyectos/")));
+				.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("a")));
 		;
 	}
 
