@@ -72,9 +72,5 @@ public class ProyectoController {
         return "";
     }
 
-    //guardar proyecto
-    @PostMapping("/save")
-    public String saveUser() {
-        return "";
-    }
+
 }
