@@ -101,10 +101,10 @@ public class ProyectoController {
     }
 
     //borra proyecto
-    @GetMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public String borrarProyecto(@PathVariable Integer id) {
         proyectoService.borrarProyecto(id);
-        return "redirect:/admin/Proyectos";
+        return "redirect:/admin/proyectos";
     }
 
 }
