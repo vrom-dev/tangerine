@@ -17,6 +17,13 @@ import java.util.List;
  */
 @Service
 public class PersonaService {
+
+    /**
+     * Method to get an array of Persona from the api in JSON format. It is converted into JAVA Persona objects
+     * Then the array is converted to a List
+     *
+     * @return
+     */
     public List<Persona> getPersonas() {
         RestTemplate restTemplate = new RestTemplate();
         Persona[] personasArray = restTemplate.getForObject("http://localhost:5000/api/socio", Persona[].class);

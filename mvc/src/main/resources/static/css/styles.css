@@ -188,11 +188,6 @@ header .img-logo {
   background-color: transparent;
 }
 
-.tablacustom, th {
-  border-top-left-radius: 2vh;
-  border-top-right-radius: 2vh;
-}
-
 .tablacustom tr:nth-child(even) {
   background-color: white;
 }

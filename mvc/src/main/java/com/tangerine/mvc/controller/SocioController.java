@@ -1,5 +1,6 @@
 package com.tangerine.mvc.controller;
 
+import com.tangerine.mvc.model.Persona;
 import com.tangerine.mvc.model.Proyecto;
 import com.tangerine.mvc.service.CargoService;
 import com.tangerine.mvc.service.ClienteService;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/personas")
+@RequestMapping("/admin/socios")
 public class SocioController {
     @Autowired
     PersonaService personaService;
@@ -32,7 +33,10 @@ public class SocioController {
 
     @GetMapping("")
     public String getAllProyectos(Model model) {
+        List<Persona> socios = personaService.getPersonas();
+        socios.forEach(socio -> System.out.println(socios));
         List<Proyecto> proyectos = proyectoService.getProyectos();
+        model.addAttribute("listasocios", socios);
         model.addAttribute("listaproyectos", proyectos);
         return "/backoffice/socios";
     }

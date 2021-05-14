@@ -77,7 +77,12 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
-    /* EDITAR */
+    /**
+     *Method to send to ProyectoService information of a Proyecto to be modified
+     *
+     * @param proyecto
+     * @return
+     */
     @PutMapping("/proyecto/edit")
     public Proyecto editProyecto(@RequestBody Proyecto proyecto) {
 
@@ -86,6 +91,11 @@ public class ApiController {
         return proyectoService.editProyecto(proyecto);
     }
 
+    /**
+     * Methos to send to ProyectoService a Proyecto to be deleted
+     *
+     * @param id
+     */
     @DeleteMapping("/proyecto/{id}")
     public void deleteProyecto(@PathVariable Integer id) {
         proyectoService.deleteProyecto(id);
@@ -104,7 +114,11 @@ public class ApiController {
     }
 
 
-    /* Metodos de Cargo y Persona */
+    /**
+     * Method to request to PersonaService all Personas in DataBase to be sent over the api
+     *
+     * @return List with all Persona
+     */
     @GetMapping("/socio")
     public List<Persona> getAllPersonas() {
 
