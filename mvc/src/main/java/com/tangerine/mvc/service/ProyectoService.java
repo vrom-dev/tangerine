@@ -59,4 +59,10 @@ public class ProyectoService {
         return updatedProyecto;
     }
 
+    public void borrarProyecto(Integer id){
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete("http://localhost:5000/api/proyecto/"+ id);
+
+    }
+
 }
