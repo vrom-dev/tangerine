@@ -46,6 +46,11 @@ public class ProyectoService {
         return proyecto;
     }
 
+    /**
+     * Methos which sends to the api a Proyecto to be modified
+     * @param updatedProyecto
+     * @return the Projecto object with the changes made
+     */
     public Proyecto updateProyecto(Proyecto updatedProyecto) {
 
         RestTemplate restTemplate = new RestTemplate();
@@ -54,6 +59,12 @@ public class ProyectoService {
         return updatedProyecto;
     }
 
+
+    public void borrarProyecto(Integer id){
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete("http://localhost:5000/api/proyecto/"+ id);
+
+    }
 
 
 }
