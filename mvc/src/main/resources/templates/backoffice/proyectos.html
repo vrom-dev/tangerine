@@ -79,7 +79,7 @@
                     <td th:text="${proyecto.imagen}"/>
                     <td th:text="${proyecto.cliente.nombre}"/>
                     <td class="text-center"><a th:href="@{/admin/proyectos/update/{id}(id=${proyecto.idproyecto})}" class="btn btn-success btn-sm mb-2">Editar</a>
-                        <a href="#" class="btn btn-danger btn-sm">Borrar</a></td>
+                        <a th:href="@{/admin/proyectos/delete/{id}(id=${proyecto.idproyecto})}" class="btn btn-danger btn-sm">Borrar</a></td>
                 </tr>
             </table>
         </div>
