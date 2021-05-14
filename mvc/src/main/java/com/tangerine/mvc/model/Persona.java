@@ -6,10 +6,8 @@ import javax.persistence.Id;
 
 /**
  * @Author Luis Rojo
- */
-
-/**
- * Creacion de una clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellidos, resumen,
+ *
+ * Clase llamada Persona, con los siguientes atributos: idpersona, nombre, apellidos, resumen,
  * foto, cargo
  */
 public class Persona {

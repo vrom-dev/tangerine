@@ -1,7 +1,6 @@
 package com.tangerine.mvc.service;
 
 import com.tangerine.mvc.model.Cliente;
-import com.tangerine.mvc.model.Proyecto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

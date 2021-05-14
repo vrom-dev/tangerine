@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Clase-Entidad conectada a la Base de Datos que mapea la tabla Clientes
- * Contiene los atributos, getters, setters y toString correspondietes
+ * Contiene los atributos, getters, setters y toString correspondientes
  */
 @Entity
 @Table(name = "clientes")

@@ -1,11 +1,8 @@
 package com.tangerine.mvc.controller;
 
 import com.tangerine.mvc.model.Persona;
-import com.tangerine.mvc.model.Proyecto;
 import com.tangerine.mvc.service.CargoService;
-import com.tangerine.mvc.service.ClienteService;
 import com.tangerine.mvc.service.PersonaService;
-import com.tangerine.mvc.service.ProyectoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,20 +21,12 @@ public class SocioController {
     @Autowired
     CargoService cargoService;
 
-    @Autowired
-    ProyectoService proyectoService;
-    @Autowired
-    ClienteService clienteService;
-
     private static final Logger log = LoggerFactory.getLogger(ProyectoController.class);
 
     @GetMapping("")
     public String getAllProyectos(Model model) {
         List<Persona> socios = personaService.getPersonas();
-        socios.forEach(socio -> System.out.println(socios));
-        List<Proyecto> proyectos = proyectoService.getProyectos();
         model.addAttribute("listasocios", socios);
-        model.addAttribute("listaproyectos", proyectos);
         return "/backoffice/socios";
     }
 }

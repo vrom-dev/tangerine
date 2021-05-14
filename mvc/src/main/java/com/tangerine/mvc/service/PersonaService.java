@@ -10,10 +10,7 @@ import java.util.List;
 
 /**
  * @Author Luis Rojo
- */
-
-/**
- * Creacion de una clase de servicio llamada PersonaService
+ * Clase de servicio PersonaService
  */
 @Service
 public class PersonaService {
