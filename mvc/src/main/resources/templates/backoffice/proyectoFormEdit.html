@@ -1,58 +1,104 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Panel de Administracion</title>
+    <!-- Bootstrap CSS -->
+    <link href="../../../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="../../../assets/fontawesome/css/all.css" rel="stylesheet"/>
+    <!--Tangerine styles -->
+    <link rel="stylesheet" href="../../../css/styles.css"/>
 </head>
 <body>
 
-<p>Formulario</p>
+<header>
+    <!--** NAVEGADOR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../../../img/tangerine-admin.png" alt="tangerine-logo"
+                                                  class="img-logo"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse posicion-menu" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-hover="Inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Sobre nosotros">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Servicios">
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Noticias">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-hover="Contacta">Contacta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<form th:object="${proyecto}"
-      th:action="@{/admin/proyectos/update}"
-      method="post">
-  <input type="hidden" id="idproyecto" th:field="*{idproyecto}">
-  <div>
-    <label for="proyecto">Proyecto</label>
-    <input type="text" id="proyecto" th:field="*{proyecto}">
-  </div>
-  <div>
-    <label for="fecha">Fecha fin</label>
-    <input type="text" id="fecha" th:field="*{fechafin}">
-  </div>
-  <div>
-    <label for="resumen">Resumen</label>
-    <input type="text" id="resumen" th:field="*{resumen}">
-  </div>
-  <div>
-    <label for="descripcion">Descripción</label>
-    <input type="text" id="descripcion" th:field="*{descripcion}">
-  </div>
-  <div>
-    <label for="imagen">Imagen</label>
-    <input type="text" id="imagen" th:field="*{imagen}">
-  </div>
-  <div>
-    <select name="idcliente"
-            th:field="*{cliente.idcliente}"
-    >
-      <option th:each="cliente: ${clientes}"
-              th:value="${cliente.idcliente}"
-              th:text="${cliente.nombre}"
-      />
-
-    </select>
-  </div>
-
-  <div>
-    <input type="submit" value="Editar">
-
-  </div>
-</form>
-
+<section id="form-editar">
+    <div class="container-fluid min-vh-100 p-4">
+        <h2 class="display-3 text-center fw-bold text-green mb-4">Proyectos - Edición</h2>
+        <div class="container d-flex justify-content-center">
+            <form th:object="${proyecto}"
+                  th:action="@{/admin/proyectos/update}"
+                  method="post">
+                <input type="hidden" id="idproyecto" th:field="*{idproyecto}" class="form-control">
+                <div class="mb-3">
+                    <label for="proyecto">Proyecto</label>
+                    <input type="text" id="proyecto" th:field="*{proyecto}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="fecha">Fecha fin</label>
+                    <input type="text" id="fecha" th:field="*{fechafin}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="resumen">Resumen</label>
+                    <input type="text" id="resumen" th:field="*{resumen}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" th:field="*{descripcion}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" id="imagen" th:field="*{imagen}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="idcliente">Cliente</label>
+                    <select name="idcliente"
+                            id="idcliente"
+                            th:field="*{cliente.idcliente}"
+                            class="form-select"
+                    >
+                        <option th:each="cliente: ${clientes}"
+                                th:value="${cliente.idcliente}"
+                                th:text="${cliente.nombre}"
+                        />
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" value="Editar">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Bootstrap JS -->
+<script src="../../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
