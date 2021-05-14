@@ -14,6 +14,12 @@ import java.util.List;
 @Service
 public class ClienteService {
 
+    /**
+     * Method to get an array of clients in JSON format from the api and transform it into JAVA objects
+     * The array is transformed into a List
+     *
+     * @return List of Cliente
+     */
     public List<Cliente> getClientes() {
         RestTemplate restTemplate = new RestTemplate();
         Cliente[] clienteArray = restTemplate.getForObject("http://localhost:5000/api/cliente", Cliente[].class);
