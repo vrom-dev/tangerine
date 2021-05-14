@@ -18,12 +18,42 @@ public class ApiControllerTest {
     @Autowired private MockMvc mockMvc;
 
     @Test
-    public void check_get() throws Exception {
+    public void checkProyectos() throws Exception {
         MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.get("/api/proyecto");
         mockMvc.perform(mockHttpServletRequestBuilder)
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("a")));
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("idproyecto")));
+        ;
+    }
+
+    @Test
+    public void checkProyectoId() throws Exception {
+        MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.get("/api/proyecto/");
+        mockMvc.perform(mockHttpServletRequestBuilder)
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("idproyecto")));
+        ;
+    }
+
+//    @Test
+//    public void checkProyectoEdit() throws Exception {
+//        MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.post("/api/proyecto/edit");
+//        mockMvc.perform(mockHttpServletRequestBuilder)
+//                .andDo(MockMvcResultHandlers.print())
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("idproyecto")));
+//        ;
+//    }
+
+    @Test
+    public void checkPersonas() throws Exception {
+        MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.get("/api/socio");
+        mockMvc.perform(mockHttpServletRequestBuilder)
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("idpersona")));
         ;
     }
 }

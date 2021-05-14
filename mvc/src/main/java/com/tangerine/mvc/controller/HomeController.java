@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Class to map the incomming request for the home page and links in the home page
+ */
 @Controller
 public class HomeController {
 
@@ -21,6 +24,11 @@ public class HomeController {
     @Autowired
     PersonaService personaService;
 
+    /**
+     * Home controller mapper, to map visits to the main page
+     * @param model
+     * @return String: Name of the main page HTML file
+     */
     @GetMapping("/")
     public String showHome(Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();
@@ -29,6 +37,11 @@ public class HomeController {
         return "/frontoffice/index";
     }
 
+    /**
+     * Proyectos Controller, to map GET request to proyectos website
+     * @param model
+     * @return String Name of the proyectos HTML file
+     */
     @GetMapping("/proyectos")
     public String showProyectos(Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();
@@ -36,6 +49,11 @@ public class HomeController {
         return "/frontoffice/proyectos";
     }
 
+    /**
+     * Socios Controller, to map GET request to socios website
+     * @param model
+     * @return String Name of the socios HTML file
+     */
     @GetMapping("/socios")
     public String showCliente(Model model) {
         List<Persona> socios = personaService.getPersonas();
