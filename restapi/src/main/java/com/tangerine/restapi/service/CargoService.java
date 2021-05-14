@@ -13,6 +13,11 @@ public class CargoService {
     @Autowired
     CargoRepository cargoRepository;
 
+    /**
+     * Metodo que recupera una lista con los cargos en la base de datos
+     *
+     * @return List<Cliente>
+     */
     public List<Cargo> findAll() {
         return cargoRepository.findAll();
     }

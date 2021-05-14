@@ -2,7 +2,10 @@ package com.tangerine.restapi.model;
 
 import javax.persistence.*;
 import java.util.List;
-
+/**
+ * Clase-Entidad conectada a la Base de Datos que mapea la tabla Cargos
+ * Contiene los atributos, getters, setters y toString correspondientes
+ */
 @Entity
 @Table(name = "cargos")
 public class Cargo {

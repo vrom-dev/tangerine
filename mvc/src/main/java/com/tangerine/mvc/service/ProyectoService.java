@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Creacion de una clase de servicio llamada ProyectoService
@@ -17,7 +16,7 @@ import java.util.Optional;
 @Service
 public class ProyectoService {
     /**
-     * Metodo que hace una petecion a una apirest que devuelve una lista de proyectos
+     * Metodo que hace una peticion a la API y recupera una lista con todos los proyectos de la BBDD
      */
     public List<Proyecto> getProyectos() {
         RestTemplate restTemplate = new RestTemplate();
@@ -25,9 +24,13 @@ public class ProyectoService {
         return Arrays.asList(proyectosArray);
     }
 
+    /**
+     * Metodo que hace una peticion a la API y un proyecto de la BBDD en funcion del id
+     *
+     * @param id
+     * @return proyecto
+     */
     public Proyecto getById(Integer id) {
-
-        // Not sure ir works Todo
         RestTemplate restTemplate = new RestTemplate();
         Proyecto proyecto = restTemplate.getForObject("http://localhost:5000/api/proyecto/{id}", Proyecto.class, id);
 
@@ -35,7 +38,7 @@ public class ProyectoService {
     }
 
     /**
-     * Metodo que inserta un poryecto a la base de datos y devuelve el proyecto insertado.
+     * Metodo que inserta un proyecto a la base de datos y devuelve el proyecto insertado
      *
      * @param proyectoToAdd
      * @return proyecto
@@ -48,6 +51,7 @@ public class ProyectoService {
 
     /**
      * Methos which sends to the api a Proyecto to be modified
+     *
      * @param updatedProyecto
      * @return the Projecto object with the changes made
      */
@@ -59,10 +63,15 @@ public class ProyectoService {
         return updatedProyecto;
     }
 
-
-    public void borrarProyecto(Integer id){
+    /**
+     * Metodo que envia una peticion DELETE a la API para eliminar un proyecto segun su ID
+     *
+     * @param id
+     * @return void
+     */
+    public void borrarProyecto(Integer id) {
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete("http://localhost:5000/api/proyecto/"+ id);
+        restTemplate.delete("http://localhost:5000/api/proyecto/" + id);
 
     }
 

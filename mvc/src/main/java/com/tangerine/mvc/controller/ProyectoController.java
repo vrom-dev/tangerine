@@ -81,7 +81,6 @@ public class ProyectoController {
     @GetMapping("/update/{id}")
     public String showProyectoToUpdate(@PathVariable Integer id, Model model) {
         List<Cliente> clientes = clienteService.getClientes();
-
         Proyecto proyecto = proyectoService.getById(id);
         model.addAttribute("clientes", clientes);
         model.addAttribute("proyecto", proyecto);

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * Clase-Entidad conectada a la Base de Datos que mapea la tabla Proyectos
- * Contiene los atributos, getters, setters y toString correspondietes
+ * Contiene los atributos, getters, setters y toString correspondientes
  */
 @Entity
 @Table(name = "proyectos")

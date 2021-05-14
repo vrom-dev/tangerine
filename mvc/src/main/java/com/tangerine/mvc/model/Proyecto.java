@@ -1,14 +1,13 @@
 package com.tangerine.mvc.model;
-/**
- * @author Alberto (Tangerine)
- */
+
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 /**
- * Creacion de una clase llamada Proyecto, con los siguientes atributos: id, proyecto, fechafin, resumen,
+ * @author Alberto (Tangerine)
+
+ * Clase llamada Proyecto, con los siguientes atributos: id, proyecto, fechafin, resumen,
  * descripcion, imagen y cliente.
  */
 

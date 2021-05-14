@@ -1,14 +1,12 @@
 package com.tangerine.mvc.model;
-/**
- * @author ALBERTO  (Tangerine)
- */
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 /**
+ * @author ALBERTO  (Tangerine)
+ *
  * Creacion de una clase llamada Cargos, con los siguentes atributos: idcargo y cargo.
  */
 

@@ -78,16 +78,13 @@ public class ApiController {
     }
 
     /**
-     *Method to send to ProyectoService information of a Proyecto to be modified
+     * Method to send to ProyectoService information of a Proyecto to be modified
      *
      * @param proyecto
      * @return
      */
     @PutMapping("/proyecto/edit")
     public Proyecto editProyecto(@RequestBody Proyecto proyecto) {
-
-        System.out.println(proyecto);
-
         return proyectoService.editProyecto(proyecto);
     }
 
@@ -108,6 +105,7 @@ public class ApiController {
      *
      * @return Lista de clientes
      */
+
     @GetMapping("/cliente")
     public List<Cliente> getAllCliente() {
         return clienteService.findAll();
@@ -115,9 +113,10 @@ public class ApiController {
 
 
     /**
-     * Method to request to PersonaService all Personas in DataBase to be sent over the api
+     * Metodo que hace una peticion a PersonaService para recuperar un listado de personas
+     * de la base de datos
      *
-     * @return List with all Persona
+     * @return List<Persona>
      */
     @GetMapping("/socio")
     public List<Persona> getAllPersonas() {
@@ -125,12 +124,26 @@ public class ApiController {
         return personaService.findAll();
     }
 
+    /**
+     * Metodo que hace una peticion a PersonaService para recuperar un registro de persona
+     * de la base de datos a partir de su id
+     *
+     * @param id
+     * @return Persona
+     */
     @GetMapping("socio/{id}")
     public Persona getPersona(@PathVariable Integer id) {
 
         return personaService.findById(id).orElseThrow(/*Todo*/);
     }
 
+    /**
+     * Metodo que controla la peticion POST para insertar un registro persona
+     * en la base de datos. Devuelve un estado 201 (creado)
+     *
+     * @param persona
+     * @return ResponseEntity<Persona>
+     */
     @PostMapping("/socio")
     public ResponseEntity<Persona> savePersona(@RequestBody Persona persona) {
 
@@ -138,6 +151,12 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
+    /**
+     * Metodo que controla la peticion GET para recuperar un listado de cargos de
+     * la base de datos
+     *
+     * @return List<Cargo>
+     */
     @GetMapping("/cargo")
     public List<Cargo> getAllCargos() {
         return cargoService.findAll();
