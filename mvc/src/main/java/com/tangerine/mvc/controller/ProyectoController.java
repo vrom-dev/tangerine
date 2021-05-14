@@ -66,15 +66,12 @@ public class ProyectoController {
     }
 
     //borra proyecto
-    @GetMapping("/delete")
-    public String deleteUser(@RequestParam("id") int id) {
-        //TO_BE_CHANGED.deleteById(id);
-        return "";
+    @GetMapping("/{id}")
+    public String borrarProyecto(@PathVariable Integer id) {
+        proyectoService.borrarProyecto(id);
+        return "redirect:/admin/Proyectos";
     }
 
-    //guardar proyecto
-    @PostMapping("/save")
-    public String saveUser() {
-        return "";
-    }
+
+
 }
