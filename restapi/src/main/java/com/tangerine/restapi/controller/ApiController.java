@@ -150,6 +150,10 @@ public class ApiController {
         Persona p = personaService.savePersona(persona);
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
+    @DeleteMapping("/socio/{id}")
+    public void deleteSocio(@PathVariable Integer id) {
+        personaService.deleteSocio(id);
+    }
 
     /**
      * Metodo que controla la peticion GET para recuperar un listado de cargos de
