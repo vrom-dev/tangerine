@@ -22,7 +22,7 @@ public class CargoService {
      */
     public List<Cargo> getCargos() {
         RestTemplate restTemplate = new RestTemplate();
-        Cargo[] cargoArray = restTemplate.getForObject("http://localhost:5000/api/cargos", Cargo[].class);
+        Cargo[] cargoArray = restTemplate.getForObject("http://localhost:5000/api/cargo", Cargo[].class);
         return Arrays.asList(cargoArray);
     }
 

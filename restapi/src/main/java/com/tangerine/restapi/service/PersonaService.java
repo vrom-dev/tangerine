@@ -43,5 +43,9 @@ public class PersonaService {
         return personaRepository.save(persona);
     }
 
+    public void deleteSocio(Integer id){
+        personaRepository.deleteById(id);
+    }
+
 
 }
