@@ -151,6 +151,12 @@ public class ApiController {
         personaService.deleteSocio(id);
     }
 
+
+    @PutMapping("/socio/edit")
+    public Proyecto editSocio(@RequestBody Persona persona) {
+        return proyectoService.editProyecto(proyecto);
+    }
+
     /**
      * Metodo que controla la peticion GET para recuperar un listado de cargos de
      * la base de datos
