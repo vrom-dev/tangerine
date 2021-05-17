@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -28,5 +29,11 @@ public class SocioController {
         List<Persona> socios = personaService.getPersonas();
         model.addAttribute("listasocios", socios);
         return "/backoffice/socios";
+    }
+    //borra socio
+    @GetMapping("/delete/{id}")
+    public String borrarSocio(@PathVariable Integer id) {
+        personaService.borrarSocio(id);
+        return "redirect:/admin/socios";
     }
 }

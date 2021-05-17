@@ -38,5 +38,10 @@ public class PersonaService {
         Persona persona = restTemplate.postForObject("http://localhost:5000/api/socio", personaToAdd, Persona.class);
         return persona;
     }
+    public void borrarSocio(Integer id) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete("http://localhost:5000/api/socio/" + id);
+
+    }
 
 }
