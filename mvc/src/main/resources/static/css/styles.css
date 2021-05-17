@@ -176,27 +176,7 @@ header .img-logo {
     min-height: 100vh;
 }
 
-/* TABLA */
 
-.tablacustom {
-    margin-top: 5vh;
-    -webkit-box-shadow: 0px 1px 15px 5px #FFFFFF;
-    box-shadow: 0px 1px 15px 5px green;
-    background-color: transparent;
-}
-
-.tablacustom tr:nth-child(even) {
-    background-color: white;
-}
-
-.tablacustom tr:nth-child(odd) {
-    background-image: linear-gradient(180deg, #ff8400 0%, #ffc446 100%);
-}
-
-.tablacustom tr:last-child {
-    border-bottom-left-radius: 2vh;
-    border-bottom-right-radius: 2vh;
-}
 
 .snap-wrapper {
     overflow-y: scroll;
@@ -208,7 +188,10 @@ section, header {
     scroll-snap-align: start;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ba1f04922af0be66386c01268647252add3997e
 /* formulario contacto seccion contacto */
 
 #mensaje {
@@ -219,6 +202,8 @@ section, header {
 #enviar {
     margin-top: 2vh;
 }
+
+/* TABLA */
 
 
 .row-max-height {
@@ -269,4 +254,7 @@ section, header {
     border-bottom: 0;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ba1f04922af0be66386c01268647252add3997e
