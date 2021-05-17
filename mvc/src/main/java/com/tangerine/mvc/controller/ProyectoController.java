@@ -49,7 +49,6 @@ public class ProyectoController {
      * @param proyecto
      * @return String with the name of the HTML file containing the form
      */
-    //Le pasamos un model con la lista de clientes, y un proyecto vacío
     @GetMapping("/add")
     public String showProyectoForm(Model model, Proyecto proyecto) {
         List<Cliente> clientes = clienteService.getClientes();
