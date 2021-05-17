@@ -17,6 +17,7 @@
         margin= auto;
     };
 
+
     </style>
 </head>
 <body>
@@ -57,31 +58,49 @@
 </header>
 
 <section id="proyectos">
-    <div class="container-fluid min-vh-100 p-4">
-        <div class="p-5 text-center">
-            <h2 class="display-3 text-center fw-bold text-green mb-4">Lista de proyectos</h2>
+    <div class="container min-vh-100">
+        <div class="text-center mb-5">
+            <h2 class="display-3 text-center fw-bold text-green mt-5 mb-4">Lista de proyectos</h2>
             <a th:href="@{/admin/proyectos/add}" class="btn btn-tangerine">Dar de alta un nuevo proyecto</a>
-            <table class="table tablacustom">
-                <tr>
-                    <th>Proyecto</th>
-                    <th>Fecha fin</th>
-                    <th>Resumen</th>
-                    <th>Descripción</th>
-                    <th>Imagen</th>
-                    <th>Cliente</th>
-                    <th>Gestionar</th>
-                </tr>
-                <tr th:each="proyecto: ${listaproyectos}">
-                    <td th:text="${proyecto.proyecto}"/>
-                    <td th:text="${proyecto.fechafin}"/>
-                    <td th:text="${proyecto.resumen}"/>
-                    <td th:text="${proyecto.descripcion}"/>
-                    <td th:text="${proyecto.imagen}"/>
-                    <td th:text="${proyecto.cliente.nombre}"/>
-                    <td class="text-center"><a th:href="@{/admin/proyectos/update/{id}(id=${proyecto.idproyecto})}" class="btn btn-success btn-sm mb-2">Editar</a>
-                        <a th:href="@{/admin/proyectos/delete/{id}(id=${proyecto.idproyecto})}" class="btn btn-danger btn-sm">Borrar</a></td>
-                </tr>
-            </table>
+            <div class="table-responsive mt-5 shadow rounded">
+                <table class="table table-striped table-light">
+                    <thead>
+                    <tr>
+                        <th scope="col">Proyecto</th>
+                        <th scope="col">Fecha fin</th>
+                        <th scope="col">Resumen</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Gestionar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="proyecto: ${listaproyectos}">
+                        <td data-label="Proyecto">
+                            <div th:text="${proyecto.proyecto}"></div>
+                        </td>
+                        <td data-label="Fecha fin">
+                            <div th:text="${proyecto.fechafin}"></div>
+                        </td>
+                        <td data-label="Resumen">
+                            <div class="row-max-height row-min-width" th:text="${proyecto.resumen}"></div>
+                        </td>
+                        <td data-label="Imagen">
+                            <div class="row-max-height text-center"><img th:src="'../' + ${proyecto.imagen}" alt="" class="row-img"></div>
+                        </td>
+                        <td data-label="Cliente">
+                            <div  th:text="${proyecto.cliente.nombre}"></div>
+                        </td>
+                        <td data-label="Gestionar">
+                            <a th:href="@{/admin/proyectos/update/{id}(id=${proyecto.idproyecto})}"
+                                   class="btn btn-success btn-sm m-1">Editar</a>
+                            <a th:href="@{/admin/proyectos/delete/{id}(id=${proyecto.idproyecto})}"
+                                   class="btn btn-danger btn-sm m-1">Borrar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </section>

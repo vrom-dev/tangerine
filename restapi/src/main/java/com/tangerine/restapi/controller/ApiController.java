@@ -146,7 +146,6 @@ public class ApiController {
      */
     @PostMapping("/socio")
     public ResponseEntity<Persona> savePersona(@RequestBody Persona persona) {
-
         Persona p = personaService.savePersona(persona);
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
