@@ -52,7 +52,7 @@
 <section id="form-editar">
     <div class="container-fluid min-vh-100 p-4">
         <h2 class="display-3 text-center fw-bold text-green mb-4">Socios - Altas</h2>
-        <div class="container d-flex justify-content-center">
+        <div class="container">
             <form th:object="${persona}"
                   th:action="@{/admin/socios/add}"
                   method="post">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="resumen">Resumen</label>
-                    <input type="text" id="resumen" th:field="*{resumen}" class="form-control">
+                    <textarea id="resumen" th:field="*{resumen}" style="height: 75px" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="foto">Foto</label>
