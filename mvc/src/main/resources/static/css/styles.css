@@ -188,6 +188,7 @@ section, header {
     scroll-snap-align: start;
 }
 
+
 /* formulario contacto seccion contacto */
 
 #mensaje {
@@ -198,7 +199,9 @@ section, header {
 #enviar {
     margin-top: 2vh;
 }
+
 /* TABLA */
+
 
 .row-max-height {
     height: 100px;
