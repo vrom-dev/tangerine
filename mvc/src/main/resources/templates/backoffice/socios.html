@@ -70,9 +70,9 @@
                     <th>Resumen</th>
                     <th>Foto</th>
                     <th>Cargo</th>
-                    <!--
+
                     <th>Gestionar</th>
-                    -->
+
                 </tr>
                 <tr th:each="socio: ${listasocios}">
                     <td th:text="${socio.nombre}"/>
@@ -81,8 +81,8 @@
                     <td th:text="${socio.foto}"/>
                     <td th:text="${socio.cargo.cargo}"/>
                     <!-- BOTONES DE EDIT y BORRADO SOCIOS -->
-                    <!-- <td class="text-center"><a th:href="@{/admin/socios/update/{id}(id=${socio.idpersona})}" class="btn btn-success btn-sm mb-2">Editar</a>
-                        <a href="#" class="btn btn-danger btn-sm">Borrar</a></td> -->
+                    <td class="text-center"><a th:href="@{/admin/socios/update/{id}(id=${socio.idpersona})}" class="btn btn-success btn-sm mb-2">Editar</a>
+                        <a th:href="@{/admin/socios/delete/{id}(id=${socio.idpersona})}" class="btn btn-danger btn-sm">Borrar</a></td>
                 </tr>
             </table>
         </div>

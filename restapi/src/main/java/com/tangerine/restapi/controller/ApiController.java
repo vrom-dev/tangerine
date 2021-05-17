@@ -1,14 +1,8 @@
 package com.tangerine.restapi.controller;
 
 import com.tangerine.restapi.exceptions.ProjectNotFoundException;
-import com.tangerine.restapi.model.Cargo;
-import com.tangerine.restapi.model.Cliente;
-import com.tangerine.restapi.model.Persona;
-import com.tangerine.restapi.model.Proyecto;
-import com.tangerine.restapi.service.CargoService;
-import com.tangerine.restapi.service.ClienteService;
-import com.tangerine.restapi.service.PersonaService;
-import com.tangerine.restapi.service.ProyectoService;
+import com.tangerine.restapi.model.*;
+import com.tangerine.restapi.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +31,9 @@ public class ApiController {
 
     @Autowired
     PersonaService personaService;
+
+    @Autowired
+    MensajeService mensajeService;
 
     /**
      * Mapeando un GET en la ruta /api/proyecto devuelve una
@@ -146,9 +143,12 @@ public class ApiController {
      */
     @PostMapping("/socio")
     public ResponseEntity<Persona> savePersona(@RequestBody Persona persona) {
-
         Persona p = personaService.savePersona(persona);
         return new ResponseEntity<>(p, HttpStatus.CREATED);
+    }
+    @DeleteMapping("/socio/{id}")
+    public void deleteSocio(@PathVariable Integer id) {
+        personaService.deleteSocio(id);
     }
 
     /**
@@ -161,5 +161,21 @@ public class ApiController {
     public List<Cargo> getAllCargos() {
         return cargoService.findAll();
     }
+
+
+    @GetMapping("/mensajes")
+    public List<Mensaje> getAllMensajes() {
+
+        return mensajeService.findAll();
+    }
+
+    @PostMapping("/mensaje")
+    public ResponseEntity<Mensaje> saveMensaje(@RequestBody Mensaje mensaje) {
+
+        Mensaje m = mensajeService.saveMensaje(mensaje);
+        return  new ResponseEntity<>(m, HttpStatus.CREATED);
+    }
+
+
 
 }
