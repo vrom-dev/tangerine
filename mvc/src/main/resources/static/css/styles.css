@@ -208,6 +208,7 @@ section, header {
     scroll-snap-align: start;
 }
 
+<<<<<<< HEAD
 /* formulario contacto seccion contacto */
 
 #mensaje {
@@ -218,3 +219,53 @@ section, header {
 #enviar {
     margin-top: 2vh;
 }
+=======
+.row-max-height {
+    height: 100px;
+    overflow:auto;
+}
+.row-min-width {
+    min-width: 250px;
+}
+
+.row-img {
+ max-height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+>>>>>>> eec53de37d82226a667f9452dc7c7a9c322ae02f
