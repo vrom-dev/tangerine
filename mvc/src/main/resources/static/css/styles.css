@@ -208,7 +208,7 @@ section, header {
     scroll-snap-align: start;
 }
 
-<<<<<<< HEAD
+
 /* formulario contacto seccion contacto */
 
 #mensaje {
@@ -219,7 +219,8 @@ section, header {
 #enviar {
     margin-top: 2vh;
 }
-=======
+
+
 .row-max-height {
     height: 100px;
     overflow:auto;
@@ -268,4 +269,4 @@ section, header {
     border-bottom: 0;
   }
 }
->>>>>>> eec53de37d82226a667f9452dc7c7a9c322ae02f
+
