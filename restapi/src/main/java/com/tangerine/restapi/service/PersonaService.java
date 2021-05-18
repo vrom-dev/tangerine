@@ -24,6 +24,7 @@ public class PersonaService {
     public List<Persona> findAll() {
         return personaRepository.findAll();
     }
+
     /**
      * Metodo que recupera una persona de la base de datos a partir de la id
      *
@@ -33,6 +34,7 @@ public class PersonaService {
     public Optional<Persona> findById(Integer id) {
         return personaRepository.findById(id);
     }
+
     /**
      * Metodo que guarda objeto Persona en la base de datos
      *
@@ -43,7 +45,23 @@ public class PersonaService {
         return personaRepository.save(persona);
     }
 
-    public void deleteSocio(Integer id){
+    public Persona editPersona(Persona newPersona) {
+        Integer id = newPersona.getIdpersona();
+        if (personaRepository.findById(id).isPresent()) {
+            Persona persona = new Persona();
+            persona.setIdpersona(newPersona.getIdpersona());
+            persona.setNombre(newPersona.getNombre());
+            persona.setApellidos(newPersona.getApellidos());
+            persona.setResumen(newPersona.getResumen());
+            persona.setFoto(newPersona.getFoto());
+            persona.setCargo(newPersona.getCargo());
+            personaRepository.save(persona);
+            return persona;
+        }
+        return newPersona;
+    }
+
+    public void deleteSocio(Integer id) {
         personaRepository.deleteById(id);
     }
 

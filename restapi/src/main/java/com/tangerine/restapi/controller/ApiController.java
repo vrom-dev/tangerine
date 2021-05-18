@@ -146,15 +146,15 @@ public class ApiController {
         Persona p = personaService.savePersona(persona);
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
+
+    @PutMapping("/socio/edit")
+    public Persona editSocio(@RequestBody Persona persona) {
+        return personaService.editPersona(persona);
+    }
+
     @DeleteMapping("/socio/{id}")
     public void deleteSocio(@PathVariable Integer id) {
         personaService.deleteSocio(id);
-    }
-
-
-    @PutMapping("/socio/edit")
-    public Proyecto editSocio(@RequestBody Persona persona) {
-        return proyectoService.editProyecto(proyecto);
     }
 
     /**
