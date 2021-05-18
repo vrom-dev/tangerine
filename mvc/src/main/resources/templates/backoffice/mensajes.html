@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos - Panel de Administracion</title>
+    <title>Mensajes - Panel de Administracion</title>
     <!-- Bootstrap CSS -->
     <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awesome -->
@@ -57,53 +57,52 @@
     </nav>
 </header>
 
-<section id="socios">
+<section id="mensajes">
     <div class="container min-vh-100">
         <div class="text-center mb-5">
-            <h2 class="display-3 text-center fw-bold text-green mt-5 mb-4">Lista de socios</h2>
-            <a th:href="@{/admin/socios/add}" class="btn btn-tangerine">Dar de alta un nuevo socio</a>
+            <h2 class="display-3 text-center fw-bold text-green mt-5 mb-4">Lista de Mensajes</h2>
+
             <div class="table-responsive mt-5 shadow rounded">
                 <table class="table table-striped table-light">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Resumen</th>
-                        <th>Foto</th>
-                        <th>Cargo</th>
-                        <th>Gestionar</th>
+                        <th scope="col">Remitente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Asunto</th>
+                        <th scope="col">Mensaje</th>
+                        <th scope="col">Respuesta</th>
+                        <th scope="col">Gestionar</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="socio: ${listasocios}">
-                        <td data-label="Nombre">
-                            <div th:text="${socio.nombre}"></div>
+                    <tr th:each="mensaje: ${listamensajes}">
+                        <td data-label="remitente">
+                            <div th:text="${mensaje.remitente}"></div>
                         </td>
-                        <td data-label="Apellidos">
-                            <div th:text="${socio.apellidos}"></div>
+                        <td data-label="Fecha">
+                            <div th:text="${mensaje.fecha}"></div>
                         </td>
-                        <td data-label="Resumen">
-                            <div class="row-max-height row-min-width" th:text="${socio.resumen}"></div>
+                        <td data-label="Asunto">
+                            <div class="row-max-height row-min-width" th:text="${mensaje.subject}"></div>
                         </td>
-                        <td data-label="Foto">
-                            <div class="row-max-height text-center">
-                                <img th:src="${socio.foto}" alt="" class="row-img">
-                            </div>
+                        <td data-label="Mensaje">
+                            <div class="row-max-height text-center" th:text="${mensaje.mensaje}"></div>
                         </td>
-                        <td data-label="Cargo" th:text="${socio.cargo.cargo}">
-                            <div th:text="${socio.cargo.cargo}"></div>
+                        <td data-label="Respuesta">
+                            <div  th:text="${mensaje.respuesta}"></div>
                         </td>
                         <td data-label="Gestionar">
-                            <a th:href="@{/admin/socios/update/{id}(id=${socio.idpersona})}"
-                               class="btn btn-success btn-sm m-1">Editar</a>
-                            <a th:href="@{/admin/socios/delete/{id}(id=${socio.idpersona})}"
-                               class="btn btn-danger btn-sm m-1">Borrar</a>
+                            <a th:href="@{#}"
+                                   class="btn btn-success btn-sm m-1">Responder</a>
+                            <a th:href="@{#}"
+                                   class="btn btn-danger btn-sm m-1">Borrar</a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Bootstrap JS -->
