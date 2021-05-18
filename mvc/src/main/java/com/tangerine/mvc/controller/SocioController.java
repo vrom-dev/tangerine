@@ -23,6 +23,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.time.Clock;
 import java.util.List;
 
+/**
+ * Clase que mapea todas las acciones atraves de admin sobre socios.
+ */
 @Controller
 @RequestMapping("/admin/socios")
 public class SocioController {
@@ -34,7 +37,7 @@ public class SocioController {
     private static final Logger log = LoggerFactory.getLogger(ProyectoController.class);
 
     /**
-     * Metodo que muestra todos los socios en la ruta /admin/socios
+     * Metodo que muestra todos los socios en la pagina /admin/socios
      *
      * @param model
      * @return String con nombre del archivo .html que contiene la lista de socios.
@@ -45,7 +48,6 @@ public class SocioController {
         model.addAttribute("listasocios", socios);
         return "/backoffice/socios";
     }
-
 
     /**
      * Metodo que muestra formulario correspondiente para crear un nuevo socio.
@@ -64,7 +66,6 @@ public class SocioController {
 
     /**
      * Metodo que envia a la api la informacion del nuevo socio que queremos crear
-     *
      * @param persona
      */
     @PostMapping("/add")
@@ -73,6 +74,12 @@ public class SocioController {
         return new ModelAndView("redirect:/admin/socios");
     }
 
+    /**Metodo que muestra la informacion del socio a editar en un formulario.
+     * Metodo
+     * @param id
+     * @param model
+     * @return String con el nombre del archivo .html que contiene el formulario para editar el socio seleccionado.
+     */
     @GetMapping("/update/{id}")
     public String showSocioToUpdate(@PathVariable Integer id, Model model) {
         List<Cargo> cargos = cargoService.getCargos();
@@ -82,12 +89,22 @@ public class SocioController {
         return "/backoffice/socioFormEdit";
     }
 
+    /**
+     * Metodo para enviar a la api la informacion del socio editado.
+     * @param persona
+     * @return
+     */
     @PostMapping("/update")
     public ModelAndView editSocio(Persona persona) {
         personaService.editSocio(persona);
         return new ModelAndView("redirect:/admin/socios");
     }
 
+    /**
+     * Metodo que borra el socio mediante un id.
+     * @param id
+     * @return redirige a la pagina de socios con el cambio efectuado.
+     */
     //borra socio
     @GetMapping("/delete/{id}")
     public String borrarSocio(@PathVariable Integer id) {
