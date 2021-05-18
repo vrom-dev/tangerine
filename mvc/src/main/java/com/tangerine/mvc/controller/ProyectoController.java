@@ -12,7 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 /**
@@ -36,9 +38,17 @@ public class ProyectoController {
      * @return String with the name of the HTML file proyectos
      */
     @GetMapping("")
-    public String getAllProyectos(Model model) {
+    public String getAllProyectos(@RequestParam(value = "i", required=false) Integer i, Model model) {
         List<Proyecto> proyectos = proyectoService.getProyectos();
-        model.addAttribute("listaproyectos", proyectos);
+        if (i != null) {
+           Stream proyectoStream = proyectos.stream().filter(proyecto -> proyecto.getCliente().getIdcliente() == i);
+           model.addAttribute("listaproyectos", proyectoStream.toArray());
+        } else {
+           model.addAttribute("listaproyectos", proyectos);
+        }
+        List<Cliente> clientes = clienteService.getClientes();
+        model.addAttribute("listaclientes", clientes);
+
         return "/backoffice/proyectos";
     }
 
