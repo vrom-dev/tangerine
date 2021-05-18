@@ -21,20 +21,20 @@ public class ContactoController {
 
     @GetMapping(value="/contacto")
     public String showContacto(Mensaje mensaje){
-
-
         return "/frontoffice/contacto";
+    }
+
+    @GetMapping(value="/contacto/success")
+    public String showGreeting(){
+        return "/frontoffice/contactogreeting";
     }
 
     @PostMapping(value="/contacto/enviar")
     public String mensajeEnviado(Mensaje mensaje){
-
         LocalDateTime now = LocalDateTime.now();
         mensaje.setFecha(Timestamp.valueOf(now));
-
         mensajeService.addMensaje(mensaje);
-
-        return "redirect:/contacto";
+        return "redirect:/contacto/success";
     }
 
     @GetMapping(value="/admin/mensajes")
