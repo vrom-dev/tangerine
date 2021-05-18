@@ -49,6 +49,12 @@ public class ProyectoService {
         return proyectoRepository.save(proyecto);
     }
 
+    /**
+     * Metodo que edita un objetto Proyecto en la base de datos
+     * @param newProyecto
+     * @return
+     */
+
     public Proyecto editProyecto(Proyecto newProyecto) {
         Integer id = newProyecto.getIdproyecto();
         if (proyectoRepository.findById(id).isPresent()) {
@@ -65,6 +71,11 @@ public class ProyectoService {
         }
         return newProyecto;
     }
+
+    /**
+     * Metodo que elimina un objeto Proyecto en la base de datos
+     * @param id
+     */
 
     public void deleteProyecto(Integer id) {
         proyectoRepository.deleteById(id);

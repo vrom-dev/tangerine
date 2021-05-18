@@ -11,14 +11,6 @@
     <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
     <link rel="stylesheet" href="../css/styles.css"/>
-    <style>
-    table {
-        width = 90%;
-        margin = auto;
-    };
-
-
-    </style>
 </head>
 <body>
 
@@ -26,7 +18,7 @@
     <!--** NAVEGADOR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../img/tangerine-admin.png" alt="tangerine-logo"
+            <a class="navbar-brand" href="/admin"><img src="../img/tangerine-admin.png" alt="tangerine-logo"
                                                   class="img-logo"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +27,7 @@
             <div class="collapse navbar-collapse posicion-menu" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/" data-hover="Inicio">Inicio</a>
+                        <a class="nav-link" href="/" data-hover="Página principal">Página principal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/proyectos/add" data-hover="Nuevo Proyecto">Nuevo Proyecto</a>
@@ -70,7 +62,7 @@
                         <th scope="col">Fecha</th>
                         <th scope="col">Asunto</th>
                         <th scope="col">Mensaje</th>
-                        <th scope="col">Respuesta</th>
+                        <th scope="col">Respondido</th>
                         <th scope="col">Gestionar</th>
                     </tr>
                     </thead>
@@ -88,13 +80,13 @@
                         <td data-label="Mensaje">
                             <div class="row-max-height text-center" th:text="${mensaje.mensaje}"></div>
                         </td>
-                        <td data-label="Respuesta">
-                            <div  th:text="${mensaje.respuesta}"></div>
+                        <td data-label="Respondido">
+                            <input class="" type="checkbox" name="active" th:checked="${mensaje.respuesta}" onclick="this.checked=!this.checked;"/>
                         </td>
                         <td data-label="Gestionar">
-                            <a th:href="@{#}"
+                            <a th:href="@{/admin/mensajes/{id}(id=${mensaje.idmensaje})}"
                                    class="btn btn-success btn-sm m-1">Responder</a>
-                            <a th:href="@{#}"
+                            <a th:href="@{/admin/mensajes/delete/{id}(id=${mensaje.idmensaje})}"
                                    class="btn btn-danger btn-sm m-1">Borrar</a>
                         </td>
                     </tr>
