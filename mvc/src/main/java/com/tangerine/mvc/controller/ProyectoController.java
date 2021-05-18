@@ -109,6 +109,11 @@ public class ProyectoController {
         return new ModelAndView("redirect:/admin/proyectos");
     }
 
+    /**
+     * Metodo para borrar proyecto dado un id.
+     * @param id
+     * @return redirige a la pagina de proyectos con el cambio efectuado.
+     */
     //borra proyecto
     @GetMapping("/delete/{id}")
     public String borrarProyecto(@PathVariable Integer id) {
