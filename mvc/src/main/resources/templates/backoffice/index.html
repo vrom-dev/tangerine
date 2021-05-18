@@ -4,13 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes - Panel de Administracion</title>
+    <title>Proyectos - Panel de Administracion</title>
     <!-- Bootstrap CSS -->
     <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awesome -->
     <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
     <link rel="stylesheet" href="../css/styles.css"/>
+    <style>
+    table {
+        width = 90%;
+        margin= auto;
+    };
+
+
+
+    </style>
 </head>
 <body>
 
@@ -49,50 +58,19 @@
     </nav>
 </header>
 
-<section id="mensajes">
-    <div class="container min-vh-100">
-        <div class="text-center mb-5">
-            <h2 class="display-3 text-center fw-bold text-green mt-5 mb-4">Lista de Mensajes</h2>
-
-            <div class="table-responsive mt-5 shadow rounded">
-                <table class="table table-striped table-light">
-                    <thead>
-                    <tr>
-                        <th scope="col">Remitente</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Asunto</th>
-                        <th scope="col">Mensaje</th>
-                        <th scope="col">Respondido</th>
-                        <th scope="col">Gestionar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="mensaje: ${listamensajes}">
-                        <td data-label="remitente">
-                            <div th:text="${mensaje.remitente}"></div>
-                        </td>
-                        <td data-label="Fecha">
-                            <div th:text="${mensaje.fecha}"></div>
-                        </td>
-                        <td data-label="Asunto">
-                            <div class="row-max-height row-min-width" th:text="${mensaje.subject}"></div>
-                        </td>
-                        <td data-label="Mensaje">
-                            <div class="row-max-height text-center" th:text="${mensaje.mensaje}"></div>
-                        </td>
-                        <td data-label="Respondido">
-                            <input class="" type="checkbox" name="active" th:checked="${mensaje.respuesta}" onclick="this.checked=!this.checked;"/>
-                        </td>
-                        <td data-label="Gestionar">
-                            <a th:href="@{/admin/mensajes/{id}(id=${mensaje.idmensaje})}"
-                                   class="btn btn-success btn-sm m-1">Responder</a>
-                            <a th:href="@{/admin/mensajes/delete/{id}(id=${mensaje.idmensaje})}"
-                                   class="btn btn-danger btn-sm m-1">Borrar</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+<section id="admin-links" class="container-fluid bg-light min-vh-100 p-5">
+    <div class="container">
+        <div class="row text-center">
+            <h2 class="display-3 text-center fw-bold text-green mb-4">Administración</h2>
+            <p>
+                <a href="admin/proyectos" class="btn btn-tangerine">Gestión de proyectos</a>
+            </p>
+            <p>
+                <a href="admin/socios" class="btn btn-tangerine">Gestión de socios</a>
+            </p>
+            <p>
+                <a href="admin/mensajes" class="btn btn-tangerine">Gestión de mensajes</a>
+            </p>
         </div>
     </div>
 </section>

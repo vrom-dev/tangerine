@@ -7,18 +7,18 @@
     <title>Contacto - Tangerine</title>
 
     <!-- Bootstrap CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awesome -->
-    <link href="assets/fontawesome/css/all.css" rel="stylesheet"/>
+    <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="../css/styles.css"/>
 </head>
 <body>
 <header>
     <!--** NAVEGADOR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../"><img src="img/tangerine.png" alt="tangerine-logo" class="img-logo"/></a>
+            <a class="navbar-brand" href="../"><img src="../img/tangerine.png" alt="tangerine-logo" class="img-logo"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,39 +51,14 @@
 <main>
 
     <section id="contacto" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-white min-vh-100">
-        <div class="container">
-            <h2 class="display-3 text-center fw-bold text-orange mb-5">Contacto</h2>
+        <div class="container text-center">
+            <h2 class="display-3 fw-bold text-orange mb-5 d-flex justify-content-center">Contacto</h2>
             <p>
-                ¿Necesitas ponerte en contacto con nosotros? Puedes hacerlo rellenando el siguiente
-                formulario, ¡Te contestaremos lo antes posible!.
+                ¡Gracias por tu mensaje! Te contestaremos lo antes posible.
             </p>
-            <div class="row">
-                <form
-                        th:object="${mensaje}"
-                        th:action="@{contacto/enviar}"
-                        method="post"
-                >
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Antonio Santos"
-                               th:field="*{remitente}" maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" class="form-control" id="asunto" placeholder="Presupuesto"
-                               th:field="*{subject}" maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea style="height: 175px" class="form-control" id="mensaje" placeholder="" th:field="*{mensaje}" maxlength="512"/>
-                    </div>
-
-                    <div>
-                        <input type="submit" value="Enviar" class="btn btn-tangerine" id="enviar">
-                    </div>
-                </form>
-
-            </div>
+            <p>
+                <a href="/" class="fw-bold text-green">Volver al inicio</a>
+            </p>
         </div>
     </section>
 
@@ -164,6 +139,6 @@
     </div>
 </footer>
 <!-- Bootstrap JS -->
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

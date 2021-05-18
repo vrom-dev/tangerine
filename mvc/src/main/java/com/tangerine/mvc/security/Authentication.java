@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class Authentication extends WebSecurityConfigurerAdapter {
 
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
 

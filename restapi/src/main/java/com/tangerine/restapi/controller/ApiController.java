@@ -175,6 +175,13 @@ public class ApiController {
         return mensajeService.findAll();
     }
 
+    @GetMapping("/mensajes/{id}")
+    public Mensaje getMensajeById(@PathVariable Integer id) {
+
+        return mensajeService.findById(id).orElseThrow(/*Todo*/);
+    }
+
+
     @PostMapping("/mensaje")
     public ResponseEntity<Mensaje> saveMensaje(@RequestBody Mensaje mensaje) {
 
@@ -182,6 +189,14 @@ public class ApiController {
         return  new ResponseEntity<>(m, HttpStatus.CREATED);
     }
 
+    @PutMapping("/mensajes/edit")
+    public Mensaje editMensaje(@RequestBody Mensaje mensaje) {
+        return mensajeService.editMensaje(mensaje);
+    }
 
+    @DeleteMapping("/mensajes/{id}")
+    public void deleteMensaje(@PathVariable Integer id) {
+        mensajeService.deleteMensaje(id);
+    }
 
 }
