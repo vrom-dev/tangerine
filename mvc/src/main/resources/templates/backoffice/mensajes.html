@@ -11,14 +11,6 @@
     <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
     <link rel="stylesheet" href="../css/styles.css"/>
-    <style>
-    table {
-        width = 90%;
-        margin = auto;
-    };
-
-
-    </style>
 </head>
 <body>
 
@@ -70,7 +62,7 @@
                         <th scope="col">Fecha</th>
                         <th scope="col">Asunto</th>
                         <th scope="col">Mensaje</th>
-                        <th scope="col">Respuesta</th>
+                        <th scope="col">Respondido</th>
                         <th scope="col">Gestionar</th>
                     </tr>
                     </thead>
@@ -88,13 +80,13 @@
                         <td data-label="Mensaje">
                             <div class="row-max-height text-center" th:text="${mensaje.mensaje}"></div>
                         </td>
-                        <td data-label="Respuesta">
-                            <div  th:text="${mensaje.respuesta}"></div>
+                        <td data-label="Respondido">
+                            <input class="" type="checkbox" name="active" th:checked="${mensaje.respuesta}" onclick="this.checked=!this.checked;"/>
                         </td>
                         <td data-label="Gestionar">
-                            <a th:href="@{#}"
+                            <a th:href="@{/admin/mensajes/{id}(id=${mensaje.idmensaje})}"
                                    class="btn btn-success btn-sm m-1">Responder</a>
-                            <a th:href="@{#}"
+                            <a th:href="@{/admin/mensajes/delete/{id}(id=${mensaje.idmensaje})}"
                                    class="btn btn-danger btn-sm m-1">Borrar</a>
                         </td>
                     </tr>
