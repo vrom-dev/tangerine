@@ -5,6 +5,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Timestamp;
 
+/**
+ * @Author Albert (Tangerine)
+ *
+ * Creacion de la clase Mensaje con los siguientes atributos: idmensaje, remitente, fecha, subject, mensaje, respuesta.
+ */
 public class Mensaje {
 
     @Id
@@ -16,9 +21,21 @@ public class Mensaje {
     private String mensaje;
     private String respuesta;
 
+    /**
+     * Constructor vacio
+     */
     public Mensaje() {
     }
 
+    /**
+     * Constructor con los siguientes parametros:
+     * @param idmensaje
+     * @param remitente
+     * @param fecha
+     * @param subject
+     * @param mensaje
+     * @param respuesta
+     */
     public Mensaje(Integer idmensaje, String remitente, Timestamp fecha, String subject, String mensaje, String respuesta) {
         this.idmensaje = idmensaje;
         this.remitente = remitente;
@@ -28,6 +45,10 @@ public class Mensaje {
         this.respuesta = respuesta;
     }
 
+    /**
+     * Getters y Setters
+     * @return
+     */
     public Integer getIdmensaje() {
         return idmensaje;
     }

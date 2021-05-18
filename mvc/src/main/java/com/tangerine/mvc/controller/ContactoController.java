@@ -13,22 +13,39 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Clase mapea las acciones a /mensajes
+ */
 @Controller
 public class ContactoController {
 
     @Autowired
     MensajeService mensajeService;
 
+    /**
+     * Metodo recoge la peticion /contacto muestra la pagina contacto recogiendo un mensaje si es necesario.
+     * @param mensaje
+     * @return String con el nombre del archivo .html contacto.
+     */
     @GetMapping(value="/contacto")
     public String showContacto(Mensaje mensaje){
         return "/frontoffice/contacto";
     }
 
+    /**
+     * Metodo recoge la peticion /contacto/success y muestra la pagina de contactogreeting.
+     * @return String con el nombre del archivo .html contactogreeting.
+     */
     @GetMapping(value="/contacto/success")
     public String showGreeting(){
         return "/frontoffice/contactogreeting";
     }
 
+    /**
+     * Metodo que recoge la petición /contacto/enviar guarda el mensaje en la BBDD y finalmente nos redirige al pagina /success.
+     * @param mensaje
+     * @return String con el nombre del archivo .html success.
+     */
     @PostMapping(value="/contacto/enviar")
     public String mensajeEnviado(Mensaje mensaje){
         LocalDateTime now = LocalDateTime.now();
@@ -37,6 +54,11 @@ public class ContactoController {
         return "redirect:/contacto/success";
     }
 
+    /**
+     * Metodo que recoge la petición /admin/mensajes y muestra todos los mensajes.
+     * @param model
+     * @return String con el nombre del archivo .html mensajes.
+     */
     @GetMapping(value="/admin/mensajes")
     public String showMensajes(Model model) {
 
