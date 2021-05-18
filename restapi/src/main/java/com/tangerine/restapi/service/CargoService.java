@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Luis Rojo (Tangerine)
+ * Clase que se encarga de recoger las peticiones del controlador y solicitar al Repositorio
+ * de cargos la accion pertinente
+ */
+
 @Service
 public class CargoService {
 
