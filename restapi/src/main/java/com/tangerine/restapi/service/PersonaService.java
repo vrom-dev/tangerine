@@ -10,6 +10,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Luis Rojo (Tangerine)
+ * Clase que se encarga de recoger las peticiones del controlador y solicitar al Repositorio
+ * de personas la accion pertinente
+ */
+
 @Service
 public class PersonaService {
 
@@ -45,6 +51,12 @@ public class PersonaService {
         return personaRepository.save(persona);
     }
 
+    /**
+     * Metodo que edita objeto Persona en la base de datos
+     * @param newPersona
+     * @return
+     */
+
     public Persona editPersona(Persona newPersona) {
         Integer id = newPersona.getIdpersona();
         if (personaRepository.findById(id).isPresent()) {
@@ -60,6 +72,11 @@ public class PersonaService {
         }
         return newPersona;
     }
+
+    /**
+     * Metodo que eleimina objeto Persona en la base de datos
+     * @param id
+     */
 
     public void deleteSocio(Integer id) {
         personaRepository.deleteById(id);

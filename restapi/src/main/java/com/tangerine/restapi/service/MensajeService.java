@@ -9,11 +9,23 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Luis Rojo (Tangerine)
+ * Clase que se encarga de recoger las peticiones del controlador y solicitar al Repositorio
+ * de mensajes la accion pertinente
+ */
+
 @Service
 public class MensajeService {
 
     @Autowired
     MensajeRepository mensajeRepository;
+
+    /**
+     * Metodo que recupera una lista con los mensajes en la base de datos
+     *
+     * @return List<Mensaje>
+     */
 
     public List<Mensaje> findAll() {
 
@@ -21,10 +33,23 @@ public class MensajeService {
         return mensajeRepository.findAll();
     }
 
+    /**
+     * Metodo que recupera un objeto Mensaje de la base de datos en funcion del ID
+     *
+     * @param id
+     * @return Mensaje
+     */
+
     public Optional<Mensaje> findById(Integer id) {
 
         return mensajeRepository.findById(id);
     }
+
+    /**
+     * Metodo que guarda un objeto Mensaje en la base de datos
+     * @param mensaje
+     * @return
+     */
 
     public Mensaje saveMensaje(Mensaje mensaje) {
 
