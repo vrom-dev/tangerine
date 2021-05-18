@@ -1,6 +1,5 @@
 package com.tangerine.mvc.controller;
 
-import com.github.javafaker.Faker;
 import com.tangerine.mvc.model.Persona;
 import com.tangerine.mvc.model.Proyecto;
 import com.tangerine.mvc.service.PersonaService;
@@ -58,7 +57,7 @@ public class HomeController {
     @GetMapping("/socios")
     public String showCliente(Model model) {
         List<Persona> socios = personaService.getPersonas();
-        List<Persona> fakeTeam = personaService.generateFakeMemberList(8);
+        List<Persona> fakeTeam = personaService.generateFakeMemberList(16);
         model.addAttribute("listasocios", socios);
         model.addAttribute("listafaketeam", fakeTeam);
         return "/frontoffice/socios";
