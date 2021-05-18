@@ -74,7 +74,7 @@ public class SocioController {
     }
 
     @GetMapping("/update/{id}")
-    public String showPersonaToUpdate(@PathVariable Integer id, Model model) {
+    public String showSocioToUpdate(@PathVariable Integer id, Model model) {
         List<Cargo> cargos = cargoService.getCargos();
         Persona persona = personaService.getById(id);
         model.addAttribute("cargos", cargos);
@@ -84,7 +84,6 @@ public class SocioController {
 
     @PostMapping("/update")
     public ModelAndView editSocio(Persona persona) {
-        System.out.println("---------------"+ persona);
         personaService.editSocio(persona);
         return new ModelAndView("redirect:/admin/socios");
     }
