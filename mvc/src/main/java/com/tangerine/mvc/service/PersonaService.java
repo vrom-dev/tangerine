@@ -30,6 +30,13 @@ public class PersonaService {
         return Arrays.asList(personasArray);
     }
 
+    public Persona getById(Integer id) {
+        RestTemplate restTemplate = new RestTemplate();
+        Persona persona = restTemplate.getForObject("http://localhost:5000/api/socio/{id}", Persona.class, id);
+
+        return persona;
+    }
+
     /**
      * Metodo que inserta una persona a la base de datos y devuelve a la persona insertada.
      *
@@ -40,6 +47,12 @@ public class PersonaService {
         RestTemplate restTemplate = new RestTemplate();
         Persona persona = restTemplate.postForObject("http://localhost:5000/api/socio", personaToAdd, Persona.class);
         return persona;
+    }
+
+    public Persona editSocio(Persona updatedPersona) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put("http://localhost:5000/api/socio/edit", updatedPersona);
+        return updatedPersona;
     }
 
     public void borrarSocio(Integer id) {

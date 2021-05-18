@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.Clock;
 import java.util.List;
 
 @Controller
@@ -69,6 +70,21 @@ public class SocioController {
     @PostMapping("/add")
     public ModelAndView addSocio(Persona persona) {
         personaService.addPersona(persona);
+        return new ModelAndView("redirect:/admin/socios");
+    }
+
+    @GetMapping("/update/{id}")
+    public String showSocioToUpdate(@PathVariable Integer id, Model model) {
+        List<Cargo> cargos = cargoService.getCargos();
+        Persona persona = personaService.getById(id);
+        model.addAttribute("cargos", cargos);
+        model.addAttribute("persona", persona);
+        return "/backoffice/socioFormEdit";
+    }
+
+    @PostMapping("/update")
+    public ModelAndView editSocio(Persona persona) {
+        personaService.editSocio(persona);
         return new ModelAndView("redirect:/admin/socios");
     }
 
