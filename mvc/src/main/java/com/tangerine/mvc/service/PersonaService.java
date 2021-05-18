@@ -1,10 +1,13 @@
 package com.tangerine.mvc.service;
 
+import com.github.javafaker.Faker;
+import com.tangerine.mvc.model.Cargo;
 import com.tangerine.mvc.model.Persona;
 import com.tangerine.mvc.model.Proyecto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,10 +41,35 @@ public class PersonaService {
         Persona persona = restTemplate.postForObject("http://localhost:5000/api/socio", personaToAdd, Persona.class);
         return persona;
     }
+
     public void borrarSocio(Integer id) {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete("http://localhost:5000/api/socio/" + id);
-
     }
 
+    public Persona generateFakeMember() {
+        Faker faker = new Faker();
+        Persona personToReturn = new Persona();
+        Cargo personaCargo = new Cargo();
+
+        Integer randomGender = (int) Math.round(Math.random());
+        Integer randomPic = (int) Math.floor(Math.random() * 50);
+        String maleOrFemale = randomGender > 0 ? "men" : "women";
+
+        personToReturn.setNombre(faker.name().firstName());
+        personToReturn.setApellidos(faker.name().lastName());
+        personToReturn.setFoto("https://randomuser.me/api/portraits/" + maleOrFemale + "/" + randomPic + ".jpg");
+        personaCargo.setCargo(faker.name().title());
+        personToReturn.setCargo(personaCargo);
+
+        return personToReturn;
+    }
+
+    public List<Persona> generateFakeMemberList(int num) {
+        List<Persona> personaList = new ArrayList<>();
+        for (int i = 0; i < num; i++) {
+            personaList.add(generateFakeMember());
+        }
+        return personaList;
+    }
 }
