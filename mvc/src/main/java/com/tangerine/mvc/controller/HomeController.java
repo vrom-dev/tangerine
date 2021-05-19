@@ -63,9 +63,9 @@ public class HomeController {
         return "/frontoffice/socios";
     }
 
-    @GetMapping("/ofertas")
+    @GetMapping("/jobs")
     public String showOfertas() {
-        return "/frontoffice/ofertas";
+        return "/frontoffice/jobs";
     }
 
 }
