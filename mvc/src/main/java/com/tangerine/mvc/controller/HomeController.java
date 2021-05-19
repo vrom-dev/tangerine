@@ -63,5 +63,9 @@ public class HomeController {
         return "/frontoffice/socios";
     }
 
+    @GetMapping("/ofertas")
+    public String showOfertas() {
+        return "/frontoffice/ofertas";
+    }
 
 }

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajes - Panel de Administracion</title>
     <!-- Bootstrap CSS -->
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awesome -->
-    <link href="../assets/fontawesome/css/all.css" rel="stylesheet"/>
+    <link href="../../assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
-    <link rel="stylesheet" href="../css/styles.css"/>
+    <link rel="stylesheet" href="../../css/styles.css"/>
 </head>
 <body>
 <section id="contacto" class="container-fluid d-flex justify-content-center pb-5 pt-5 bg-white min-vh-100">
@@ -22,14 +22,13 @@
                     th:action="@{/admin/mensajes}"
                     method="post"
             >
-
                 <input type="hidden" th:field="*{idmensaje}">
                 <input type="hidden" th:field="*{remitente}">
                 <input type="hidden" th:field="*{subject}">
                 <input type="hidden" th:field="*{fecha}">
                 <input type="hidden" th:field="*{mensaje}">
                 <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
+                    <label for="mensaje">Escribe la respuesta:</label>
                     <textarea style="height: 175px" class="form-control" id="mensaje" placeholder=""
                               th:field="*{respuesta}" maxlength="512"/>
                 </div>
@@ -41,5 +40,8 @@
         </div>
     </div>
 </section>
+
+<!-- Bootstrap JS -->
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

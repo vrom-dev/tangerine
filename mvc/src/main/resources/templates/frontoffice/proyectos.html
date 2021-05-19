@@ -57,7 +57,7 @@
                     <div class="col-12 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
                         <div class="rounded shadow mb-3">
                             <div class="card-header"
-                                 th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
+                                 th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover; background-position-y: center;'"></div>
                             <div class="card-body">
                                 <h5 class="card-title" th:text="${proyecto.proyecto}"/>
                                 <p class="card-text" th:text="${proyecto.resumen}"/>

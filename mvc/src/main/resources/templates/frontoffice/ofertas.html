@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con nosotros</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet"/>
+    <!--Tangerine styles -->
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<header>
+    <!--** NAVEGADOR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="img/tangerine.png" alt="tangerine-logo"
+                                                  class="img-logo"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse posicion-menu" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" data-hover="Inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/socios" data-hover="Sobre nosotros">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/proyectos" data-hover="Proyectos">
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacto" data-hover="Contacta">Contacta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin" data-hover="Admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container-fluid d-flex justify-content-center align-items-center pb-5 pt-5 min-vh-100">
+    <div class="container row">
+        <section class="accordion col-12" id="jobs">
+            <h2 class="display-3 text-center fw-bold text-orange mb-5">Trabaja con nosotros</h2>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed fw-bold text-muted" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="false" aria-controls="collapseOne">
+                        Senior Backend developer (Kotlin + Java)
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                     data-bs-parent="#jobs">
+                    <div class="accordion-body">
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">Descripción del empleo</h3>
+                        <p class="text-muted">
+                            En Tangerine buscamos personas para trabajar como desarrolladores Backend con amplia
+                            experiencia en Java y Spring Boot para proyectos internacionales.
+                        </p>
+                        <p class="text-muted">
+                            Tu función principal será desarrollar plataformas para producir aplicaciones de análisis y
+                            presentación de datos. Se hará el diseño y la implementación desde cero.
+                        </p>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">Conocimientos requeridos</h3>
+                        <ul class="text-muted">
+                            <li>Aproximadamente unos 5 años de experiencia en Backend.
+                            </li>
+                            <li>Amplia experiencia en Java y Spring Boot.
+                            </li>
+                            <li>Inglés alto/C1 speaking.
+                            </li>
+                            <li>Tener conocimientos en metododlogías Agile.
+                            </li>
+                        </ul>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Qué te vas a encontrar?</h3>
+                        <ul class="text-muted">
+                            <li>Toda la infraestructura en cloud (AWS).</li>
+                            <li>Stack de microservicios compuesto por Kotlin, Spring Boot, PostgreSQL y Kafka,
+                                desplegados en Kubernetes.
+                            </li>
+                            <li>Un equipo técnico de más de 15 personas (Backend, Frontend, Apps, Data y Engineers)
+                                en Madrid.
+                            </li>
+                            <li>Cultura de feedback. Fomentamos el dar y recibir feedback para mejorar cada día.</li>
+                        </ul>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Y qué hacemos?</h3>
+                        <ul class="text-muted">
+                            <li>Basamos nuestro trabajo en Domain Driven Design.</li>
+                            <li>Usamos SCRUM como metodología Agile.</li>
+                            <li>Nuestro código se basa en arquitectura hexagonal. Nos encanta el testing y las buenas
+                                prácticas como TDD, code quality checks, CI, CD.
+                            </li>
+                            <li>Somos responsables y por eso monitorizamos todo.</li>
+                        </ul>
+                        <p class="text-muted">Si todo esto encaja contigo, no lo dudes, ¡te estamos buscando!</p>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Qué ofrecemos?</h3>
+                        <p class="text-muted">En Tangerine creemos en el poder de una política de beneficios justa y
+                            equitativa. Y lo
+                            damos todo para que así sea. Por eso, cuidamos al máximo aspectos del día a día que pueden
+                            ser
+                            clave para ti</p>
+                        <ul class="text-muted">
+                            <li>Tenemos un horario flexible y puedes teletrabajar un día a la semana. Ahora
+                                teletrabajamos todos/as y tienes la posibilidad de ir a la oficina con todas las medidas
+                                de seguridad.
+                            </li>
+                            <li>Cada año revisamos el mercado de talento para crear compensation packs competitivos.
+                                Además, tenemos planes para que puedas flexibilizar parte de tu salario a través de
+                                otros
+                                beneficios como por ejemplo: ticket restaurante, ticket transporte, formación o
+                                guardería.
+                            </li>
+                            <li>Puedes elegir entre un portátil MacbookPro o Dell XPS y entre Iphone o un Samsung.</li>
+                            <li>Te subvencionamos el parking hasta un máximo de 90€/mes.</li>
+                            <li>Tu bienestar es nuestra prioridad. Ofrecemos seguro médico esponsorizado por la empresa
+                                y con un precio especial para tu familia.
+                            </li>
+                            <li>Tenemos un médico en la oficina y brindamos opciones de wellness como Yoga y fisioterapeuta.
+                            </li>
+                            <li>¿Te gusta ir al gimnasio? Te subvencionamos el 70% de tu cuota mensual y tenemos un
+                                acuerdo especial con los gimnasios Andjoy y McFit.
+                            </li>
+                            <li>Tienes 23 días de vacaciones al año.</li>
+                            <li>Ofrecemos desayuno y bebidas gratis. Puedes optar también por
+                                comer el menú del día recién preparado en nuestra cantina.
+                            </li>
+                            <li>También tienes 5 días extra para asistir a conferencias y cuentas con una entrada al año
+                                pagada por la empresa.
+                            </li>
+                        </ul>
+                        <h3 class="h5 fw-bold text-muted mt-2 mb-2">¡Si estás interesado no dudes en <a
+                                href="./contacto" class="text-green text-decoration-none">contactar</a> con nosotros!
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fw-bold text-muted" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Junior Front-End developer
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                     data-bs-parent="#jobs">
+                    <div class="accordion-body">
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">Descripción del empleo</h3>
+                        <p class="text-muted">
+                            En Tangerine buscamos desarrolladores Javascript con conocimientos en frameworks como
+                            Angular o ReactJs para proyectos internacionales.
+                        </p>
+                        <p class="text-muted">
+                            Tu función principal será desarrollar el front de nuestras aplicaciones utilizando
+                            tecnologías como Angular o ReactJs.
+                        </p>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">Conocimientos requeridos</h3>
+                        <ul class="text-muted">
+                            <li>Experiencia en Frontend: HTML, Javascript, CSS y similares, valorable React/Redux
+                            </li>
+                            <li>Experiencia en Java con Frameworks: Struts, Angular o similares, valorable Spring.
+                            </li>
+                            <li>Conocimientos con gestores de tareas de tipo Ant o Maven.
+                            </li>
+                            <li>Conocimientos de SQL.
+                            </li>
+                            <li>Conocimientos con control de versiones SVN/GIT.
+                            </li>
+                        </ul>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Qué te vas a encontrar?</h3>
+                        <ul class="text-muted">
+                            <li>Stack compuesto por React + Next.js, Spring Boot. Despliegue con Vercel.</li>
+                            <li>Un equipo técnico de más de 15 personas (Backend, Frontend, Apps, Data y Engineers).
+                            </li>
+                            <li>Desarrollo con foco especial en la performance.
+                            </li>
+                            <li>Cultura de feedback. Fomentamos el dar y recibir feedback para mejorar cada día.</li>
+                        </ul>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Y qué hacemos?</h3>
+                        <ul class="text-muted">
+                            <li>Basamos nuestro trabajo en Domain Driven Design.</li>
+                            <li>Usamos SCRUM como metodología Agile.</li>
+                            <li>Nuestro código se basa en arquitectura hexagonal. Nos encanta el testing y las buenas
+                                prácticas como TDD, code quality checks, CI, CD.
+                            </li>
+                            <li>Somos responsables y por eso monitorizamos todo.</li>
+                        </ul>
+                        <p class="text-muted">Si todo esto encaja contigo, no lo dudes, ¡te estamos buscando!</p>
+                        <h3 class="h4 fw-bold text-muted mt-2 mb-2">¿Qué ofrecemos?</h3>
+                        <p class="text-muted">En Tangerine creemos en el poder de una política de beneficios justa y
+                            equitativa. Y lo
+                            damos todo para que así sea. Por eso, cuidamos al máximo aspectos del día a día que pueden
+                            ser
+                            clave para ti</p>
+                        <ul class="text-muted">
+                            <li>Tenemos un horario flexible y puedes teletrabajar un día a la semana. Ahora
+                                teletrabajamos todos/as y tienes la posibilidad de ir a la oficina con todas las medidas
+                                de seguridad.
+                            </li>
+                            <li>Cada año revisamos el mercado de talento para crear compensation packs competitivos.
+                                Además, tenemos planes para que puedas flexibilizar parte de tu salario a través de
+                                otros
+                                beneficios como por ejemplo: ticket restaurante, ticket transporte, formación o
+                                guardería.
+                            </li>
+                            <li>Puedes elegir entre un portátil MacbookPro o Dell XPS y entre Iphone o un Samsung.</li>
+                            <li>Te subvencionamos el parking hasta un máximo de 90€/mes.</li>
+                            <li>Tu bienestar es nuestra prioridad. Ofrecemos seguro médico esponsorizado por la empresa
+                                y con un precio especial para tu familia.
+                            </li>
+                            <li>Tenemos un médico en la oficina y brindamos opciones de wellness como Yoga y fisioterapeuta.
+                            </li>
+                            <li>¿Te gusta ir al gimnasio? Te subvencionamos el 70% de tu cuota mensual y tenemos un
+                                acuerdo especial con los gimnasios Andjoy y McFit.
+                            </li>
+                            <li>Tienes 23 días de vacaciones al año.</li>
+                            <li>Ofrecemos desayuno y bebidas gratis. Puedes optar también por
+                                comer el menú del día recién preparado en nuestra cantina.
+                            </li>
+                            <li>También tienes 5 días extra para asistir a conferencias y cuentas con una entrada al año
+                                pagada por la empresa.
+                            </li>
+                        </ul>
+                        <h3 class="h5 fw-bold text-muted mt-2 mb-2">¡Si estás interesado no dudes en <a
+                                href="./contacto" class="text-green text-decoration-none">contactar</a> con nosotros!
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="col-12 d-flex align-items-start justify-content-center">
+            <div>
+                <h3 class="h4 fw-bold text-muted mt-5 mb-3 text-center">Nuestras oficinas</h3>
+                <p class="text-muted text-start">
+                    Nuestras oficinas están situadas en pleno centro de Madrid, muy cerca de los principales puntos de interés de la ciudad. Las oficinas están equipadas con todas las comodidades: espacios reservados, cantina, espacios de ocio, etc.
+                </p>
+                <div class="row">
+                    <div class="col-12 col-lg-6 text-center">
+                        <img src="img/oficinas.jpg" class="pt-2 pb-2 pl-1 offices" alt="oficinas">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.832217600878!2d-3.702709148823274!3d40.434713979261794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f51f0b164d%3A0xa55767987a5638ee!2sCalle%20Eloy%20Gonzalo%2C%2027%2C%2028010%20Madrid!5e0!3m2!1ses!2ses!4v1621418687835!5m2!1ses!2ses"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+<!-- FOOTER -->
+<footer class="text-center bg-footer text-light">
+    <!-- Enlaces  -->
+    <section id="links" class="p-5">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-seedling me-3"></i>Tangerine
+                    </h6>
+                    <p>
+                        Expertos en desarrollo web, las vitaminas que necesita tu proyecto.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Enlaces
+                    </h6>
+                    <p>
+                        <a href="/" class="text-light text-decoration-none">Inicio</a>
+                    </p>
+                    <p>
+                        <a href="/socios" class="text-light text-decoration-none">Sobre nosotros</a>
+                    </p>
+                    <p>
+                        <a href="/proyectos" class="text-light text-decoration-none">Proyectos</a>
+                    </p>
+                    <p>
+                        <a href="/contacto" class="text-light text-decoration-none">Contacto</a>
+                    </p>
+                    <p>
+                        <a href="/admin" class="text-light text-decoration-none">Admin</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Localización</h6>
+                    <p><i class="fas fa-home me-3"></i>Calle abcdef, 00000, ES</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@tangerine.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 34 921 000 123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Redes sociales -->
+    <section id="social" class="mb-4">
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a class="btn btn-tangerine btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+        ></a>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(255, 132, 0, 0.25);">
+        Tangerine &#169; 2021
+        <span class="text-reset fw-bold"> Todos los derechos reservados</span>
+    </div>
+</footer>
+<!-- Bootstrap JS -->
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
