@@ -251,3 +251,12 @@ section, header {
     border-bottom: 0;
   }
 }
+
+.iframe-container {
+    width: 100%;
+}
+
+.offices {
+    max-width: 100%;
+    max-height: 450px;
+}

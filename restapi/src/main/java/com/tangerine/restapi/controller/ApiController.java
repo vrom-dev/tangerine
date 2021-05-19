@@ -147,10 +147,23 @@ public class ApiController {
         return new ResponseEntity<>(p, HttpStatus.CREATED);
     }
 
+    /**
+     * Metodo que controla la peticion PUT para editar un registro persona
+     * en la base de datos. Devuelve un estado 201 (OK)
+     * @param persona
+     * @return
+     */
+
     @PutMapping("/socio/edit")
     public Persona editSocio(@RequestBody Persona persona) {
         return personaService.editPersona(persona);
     }
+
+    /**
+     * Merodo que contrlo la peticion DELETE para borrar un registro persona
+     * en la base de datos. Devuelve un estado 201 (OK)
+     * @param id
+     */
 
     @DeleteMapping("/socio/{id}")
     public void deleteSocio(@PathVariable Integer id) {
@@ -168,6 +181,11 @@ public class ApiController {
         return cargoService.findAll();
     }
 
+    /**
+     * Metodo que controla la peticion GET para recuperar un listado de mensajes
+     * de la base de datos
+     * @return List<Mensaje>
+     */
 
     @GetMapping("/mensajes")
     public List<Mensaje> getAllMensajes() {
@@ -175,12 +193,25 @@ public class ApiController {
         return mensajeService.findAll();
     }
 
+    /**
+     * Metodo que hace una peticion a mensajeService para recuperar un registro de mensaje
+     * de la base de datos a partir de su id
+     * @param id
+     * @return Mensaje
+     */
+
     @GetMapping("/mensajes/{id}")
     public Mensaje getMensajeById(@PathVariable Integer id) {
 
         return mensajeService.findById(id).orElseThrow(/*Todo*/);
     }
 
+    /**
+     * Metodo que controla la peticion POST para insertar un registro mensaje
+     * en la base de datos. Devuelve un estado 201 (creado)
+     * @param mensaje
+     * @return ResponseEntity<Mensaje>
+     */
 
     @PostMapping("/mensaje")
     public ResponseEntity<Mensaje> saveMensaje(@RequestBody Mensaje mensaje) {
@@ -189,10 +220,23 @@ public class ApiController {
         return  new ResponseEntity<>(m, HttpStatus.CREATED);
     }
 
+    /**
+     * Metodo que controla la peticion PUT para editar un registro mensaje
+     * en la base de datos. Devuelve un estado 201 (OK)
+     * @param mensaje
+     * @return
+     */
+
     @PutMapping("/mensajes/edit")
     public Mensaje editMensaje(@RequestBody Mensaje mensaje) {
         return mensajeService.editMensaje(mensaje);
     }
+
+    /**
+     * Merodo que contrlo la peticion DELETE para borrar un registro persona
+     * en la base de datos. Devuelve un estado 201 (OK)
+     * @param id
+     */
 
     @DeleteMapping("/mensajes/{id}")
     public void deleteMensaje(@PathVariable Integer id) {

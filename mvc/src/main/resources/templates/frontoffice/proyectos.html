@@ -40,6 +40,9 @@
                         <a class="nav-link" href="/contacto" data-hover="Contacta">Contacta</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/jobs" data-hover="Trabaja con nosotros">Trabaja con nosotros</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/admin" data-hover="Admin">Admin</a>
                     </li>
                 </ul>
@@ -57,7 +60,7 @@
                     <div class="col-12 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
                         <div class="rounded shadow mb-3">
                             <div class="card-header"
-                                 th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
+                                 th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover; background-position-y: center;'"></div>
                             <div class="card-body">
                                 <h5 class="card-title" th:text="${proyecto.proyecto}"/>
                                 <p class="card-text" th:text="${proyecto.resumen}"/>
@@ -114,6 +117,9 @@
                     </p>
                     <p>
                         <a href="/contacto" class="text-light text-decoration-none">Contacto</a>
+                    </p>
+                    <p>
+                        <a href="/jobs" class="text-light text-decoration-none">Trabaja con nosotros</a>
                     </p>
                     <p>
                         <a href="/admin" class="text-light text-decoration-none">Admin</a>

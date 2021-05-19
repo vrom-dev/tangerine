@@ -78,7 +78,7 @@
                             <div class="row-max-height row-min-width" th:text="${mensaje.subject}"></div>
                         </td>
                         <td data-label="Mensaje">
-                            <div class="row-max-height text-center" th:text="${mensaje.mensaje}"></div>
+                            <div class="row-max-height row-min-width" th:text="${mensaje.mensaje}"></div>
                         </td>
                         <td data-label="Respondido">
                             <input class="" type="checkbox" name="active" th:checked="${mensaje.respuesta}" onclick="this.checked=!this.checked;"/>
