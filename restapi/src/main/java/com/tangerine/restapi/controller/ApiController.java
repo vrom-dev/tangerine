@@ -1,5 +1,7 @@
 package com.tangerine.restapi.controller;
 
+import com.tangerine.restapi.exceptions.MensajeNotFoundException;
+import com.tangerine.restapi.exceptions.PersonaNotFoundException;
 import com.tangerine.restapi.exceptions.ProjectNotFoundException;
 import com.tangerine.restapi.model.*;
 import com.tangerine.restapi.service.*;
@@ -131,7 +133,9 @@ public class ApiController {
     @GetMapping("socio/{id}")
     public Persona getPersona(@PathVariable Integer id) {
 
-        return personaService.findById(id).orElseThrow(/*Todo*/);
+        return personaService
+                .findById(id)
+                .orElseThrow(PersonaNotFoundException::new);
     }
 
     /**
@@ -149,7 +153,7 @@ public class ApiController {
 
     /**
      * Metodo que controla la peticion PUT para editar un registro persona
-     * en la base de datos. Devuelve un estado 201 (OK)
+     * en la base de datos.
      * @param persona
      * @return
      */
@@ -161,7 +165,7 @@ public class ApiController {
 
     /**
      * Merodo que contrlo la peticion DELETE para borrar un registro persona
-     * en la base de datos. Devuelve un estado 201 (OK)
+     * en la base de datos.
      * @param id
      */
 
@@ -203,7 +207,9 @@ public class ApiController {
     @GetMapping("/mensajes/{id}")
     public Mensaje getMensajeById(@PathVariable Integer id) {
 
-        return mensajeService.findById(id).orElseThrow(/*Todo*/);
+        return mensajeService
+                .findById(id)
+                .orElseThrow(MensajeNotFoundException::new);
     }
 
     /**
@@ -222,7 +228,7 @@ public class ApiController {
 
     /**
      * Metodo que controla la peticion PUT para editar un registro mensaje
-     * en la base de datos. Devuelve un estado 201 (OK)
+     * en la base de datos.
      * @param mensaje
      * @return
      */
@@ -234,7 +240,7 @@ public class ApiController {
 
     /**
      * Merodo que contrlo la peticion DELETE para borrar un registro persona
-     * en la base de datos. Devuelve un estado 201 (OK)
+     * en la base de datos.
      * @param id
      */
 
