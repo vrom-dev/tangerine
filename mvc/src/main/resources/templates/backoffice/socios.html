@@ -80,7 +80,7 @@
                         </td>
                         <td data-label="Foto">
                             <div class="row-max-height text-center">
-                                <img th:src="${socio.foto}" alt="" class="row-img">
+                                <img th:src="'../' + ${socio.foto}" alt="" class="row-img">
                             </div>
                         </td>
                         <td data-label="Cargo" th:text="${socio.cargo.cargo}">
