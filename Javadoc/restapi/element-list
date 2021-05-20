@@ -1,0 +1,7 @@
+com.tangerine.restapi
+com.tangerine.restapi.config
+com.tangerine.restapi.controller
+com.tangerine.restapi.exceptions
+com.tangerine.restapi.model
+com.tangerine.restapi.repository
+com.tangerine.restapi.service

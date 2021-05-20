@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.tangerine.restapi"},{"l":"com.tangerine.restapi.config"},{"l":"com.tangerine.restapi.controller"},{"l":"com.tangerine.restapi.exceptions"},{"l":"com.tangerine.restapi.model"},{"l":"com.tangerine.restapi.repository"},{"l":"com.tangerine.restapi.service"}];updateSearchResults();
