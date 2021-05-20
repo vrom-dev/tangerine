@@ -12,8 +12,8 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet"/>
     <!--Tangerine styles -->
     <link rel="stylesheet" href="css/styles.css"/>
-
-    <title>Tangerine - Desarrollo web</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Tangerine Inc.</title>
 </head>
 
 <body>
@@ -359,7 +359,7 @@
                         <div class="col-12 col-lg-4 p-2 text-muted" th:each="proyecto: ${listaproyectos}">
                             <div class="card card-proyectos shadow">
                                 <div class="card-header"
-                                     th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover;'"></div>
+                                     th:style="'background:url(\'' + ${proyecto.imagen} + '\'); background-size: cover; background-position-y:center'"></div>
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${proyecto.proyecto}"/>
                                     <p class="card-text text-start" th:text="${proyecto.resumen}"/>

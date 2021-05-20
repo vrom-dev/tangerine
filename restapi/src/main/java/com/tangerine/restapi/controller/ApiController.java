@@ -239,7 +239,7 @@ public class ApiController {
     }
 
     /**
-     * Merodo que contrlo la peticion DELETE para borrar un registro persona
+     * Merodo que controlo la peticion DELETE para borrar un registro persona
      * en la base de datos.
      * @param id
      */
